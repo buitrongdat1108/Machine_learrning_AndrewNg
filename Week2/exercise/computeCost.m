@@ -12,8 +12,13 @@ J = 0;
 % ====================== YOUR CODE HERE ======================
 % Instructions: Compute the cost of a particular choice of theta
 %               You should set J to the cost.
+error=X*theta-y;
+J_temp=0;
+for i=1:m
+    J_temp=J_temp+(error(i))^2;
+end
 
-
+J=(1/(2*m))*J_temp
 
 
 
