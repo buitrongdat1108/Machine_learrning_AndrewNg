@@ -18,18 +18,14 @@ grad = zeros(size(theta));
 %
 %               You should set J to the cost and grad to the gradient.
 %
+% thêm bias unit vào input X nên X = mx2
+% vì có 2 features nên theta là vector có độ lớn 2x1
+% grad có cùng độ lớn với theta, bằng 2x1
+h_x= X*theta;
+J=(1/(2*m))*sum((h_x-y).^2)+(lambda/(2*m))*sum(theta(2:end).^2); %Scalar
 
-
-
-
-
-
-
-
-
-
-
-
+grad(1)=(1/m)*sum(X(:,1)'*(h_x-y));
+grad(2:end)=(1/m)*sum(X(:,2:end)'*(h_x-y)) + (lambda/m)*theta(2:end);
 % =========================================================================
 
 grad = grad(:);
