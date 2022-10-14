@@ -16,7 +16,7 @@ word_indices = [];
 
 % Find the Headers ( \n\n and remove )
 % Uncomment the following lines if you are working with raw emails with the
-% full headers
+% full headers:
 
 % hdrstart = strfind(email_contents, ([char(10) char(10)]));
 % email_contents = email_contents(hdrstart(1):end);
