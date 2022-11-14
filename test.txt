@@ -7,4 +7,5 @@ lệnh kéo về : git fetch
 lệnh đẩy lên: git add .
               git commit -m "nội dung thay đổi"
               git push
-              
+
+Checkout branch datbt dùng vscode click vào branch cần checkout
