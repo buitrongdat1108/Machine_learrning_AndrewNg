@@ -1,5 +1,3 @@
-Đạt đã thêm file này hihi
-Tùng ơi kéo về đi
 lệnh kéo về : git fetch
               git merge
 
