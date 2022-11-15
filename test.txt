@@ -3,12 +3,18 @@ QUAN TRỌNG: trước khi định làm gì/thay đổi gì liên quan đến pr
 	git merge
 trước. Tóm lại mỗi lần mở project lên thì tạo thói quen ngay lập tức chạy 2 câu lệnh trên.
 
-lệnh kéo về : git fetch
+1.lệnh kéo về : git fetch
               git merge
 
 
-lệnh đẩy lên: git add .
+2.lệnh đẩy lên: git add .
               git commit -m "nội dung thay đổi"
               git push
 
-Checkout branch datbt dùng vscode click vào branch cần checkout.
+3.Checkout branch: dùng vscode click vào branch cần checkout (cơ bản)
+Hoặc nếu dùng terminal thì dùng lệnh: git checkout tên_branch    (lưu ý tuyệt đối không có chữ origin)
+Ví dụ: project đang ở branch tungld mà muốn checkout sang datbt thì chỉ việc gõ: git checkout datbt
+Muốn về lại branch của tungld thì: 
+	a. Nhớ lưu tất cả các thay đổi mà mình đã gây ra ở branch người ta, sau đó push lên github hoặc là rollback về lần commit gần nhất của họ 
+	(tra bằng lệnh git log, gg nếu chưa rõ lệnh này)
+	b.Chạy lại câu lệnh : git checkout tungld 
