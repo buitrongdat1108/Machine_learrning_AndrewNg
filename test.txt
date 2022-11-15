@@ -15,6 +15,6 @@ trước. Tóm lại mỗi lần mở project lên thì tạo thói quen ngay l�
 Hoặc nếu dùng terminal thì dùng lệnh: git checkout tên_branch    (lưu ý tuyệt đối không có chữ origin)
 Ví dụ: project đang ở branch tungld mà muốn checkout sang datbt thì chỉ việc gõ: git checkout datbt
 Muốn về lại branch của tungld thì: 
-	a. Nhớ lưu tất cả các thay đổi mà mình đã gây ra ở branch người ta, sau đó push lên github hoặc là rollback về lần commit gần nhất của họ 
+	1. Nhớ lưu tất cả các thay đổi mà mình đã gây ra ở branch người ta, sau đó push lên github hoặc là rollback về lần commit gần nhất của họ 
 	(tra bằng lệnh git log, gg nếu chưa rõ lệnh này)
-	b.Chạy lại câu lệnh : git checkout tungld 
+	2. Chạy lại câu lệnh : git checkout tungld 
