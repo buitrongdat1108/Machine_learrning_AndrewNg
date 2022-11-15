@@ -14,11 +14,11 @@ trước. Tóm lại mỗi lần mở project lên thì tạo thói quen ngay l�
 3.Checkout branch: dùng vscode click vào branch cần checkout (cơ bản)
 Hoặc nếu dùng terminal thì: 
 	1. Tại branch của mình: commit tất cả những thay đổi mà mình gây ra ở branch của mình trước (chưa cần push lên github cũng được)
-	2. Tại branch của mình: dùng lệnh: git checkout tên_branch    (lưu ý tuyệt đối không có chữ origin)
+	2. Tại branch của mình: dùng lệnh: git checkout tên_branch_cần_checkout_đến    (lưu ý tuyệt đối không có chữ origin)
 
-Ví dụ: project đang ở branch tungld mà muốn checkout sang datbt thì chỉ việc gõ: git checkout datbt
-Muốn về lại branch của tungld thì: 
+Ví dụ: project đang ở branch tungld mà muốn checkout sang datbt thì commit thay đổi tính đến giờ của branch tungld trước, rồi gõ lệnh: git checkout datbt
+Muốn về lại branch của mình thì: 
 	1.Tại branch của người khác: Nhớ lưu tất cả các thay đổi mà mình đã gây ra ở branch người ta, sau đó push lên github hoặc là rollback về lần commit gần nhất của họ 
 	(tra bằng lệnh git log, gg nếu chưa rõ lệnh này). Nhưng tóm lại là khi đã dùng branch của người khác thì không nên để thay đổi xảy ra trên branch của họ, hoặc nếu có 
 	thì biết cách khắc phục rồi, cái này bình thường không có gì khó khăn cả !
-	2. Tại branch của người khác: Chạy lại câu lệnh : git checkout tungld => về lại branch của mình
+	2. Tại branch của người khác: Chạy lại câu lệnh : git checkout tên_branch_của_mình => về lại branch của mình (lưu ý tuyệt đối k có chữ origin, hoặc là từ h trở đi quên nó đi)
