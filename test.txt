@@ -1,3 +1,8 @@
+QUAN TRỌNG: trước khi định làm gì/thay đổi gì liên quan đến project trong git thì nhớ chạy 2 câu lệnh
+	git fetch
+	git merge
+trước. Tóm lại mỗi lần mở project lên thì tạo thói quen ngay lập tức chạy 2 câu lệnh trên.
+
 lệnh kéo về : git fetch
               git merge
 
