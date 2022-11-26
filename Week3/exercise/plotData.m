@@ -10,7 +10,7 @@ neg=find(y==0);
 figure;
 plot(X(pos,1),X(pos,2),'k+','LineWidth',2,'MarkerSize',7);
 hold on;
-plot(X(neg,1),X(neg,2),'ko','LineWidth','MarkerSize',7);
+plot(X(neg,1),X(neg,2),'kv','LineWidth',3,'MarkerSize',7);
 
 % ====================== YOUR CODE HERE ======================
 % Instructions: Plot the positive and negative examples on a
