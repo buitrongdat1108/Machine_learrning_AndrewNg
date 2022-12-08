@@ -1,0 +1,523 @@
+WEBVTT
+Kind: captions
+Language: vi
+
+00:00:00.650 --> 00:00:03.210
+Trong video trước, bạn đã thấy cách
+
+00:00:03.210 --> 00:00:06.425
+một mạng lưới thần kinh hoạt động trong một
+ví dụ dự đoán nhu cầu.
+
+00:00:06.425 --> 00:00:09.270
+Chúng ta hãy xem làm thế nào bạn
+có thể áp dụng một loại tương tự
+
+00:00:09.270 --> 00:00:13.335
+ý tưởng cho ứng dụng thị giác máy tính
+. Hãy đi sâu vào.
+
+00:00:13.335 --> 00:00:15.735
+Nếu bạn đang xây dựng một
+ứng dụng nhận dạng khuôn mặt,
+
+00:00:15.735 --> 00:00:17.219
+bạn có thể muốn đào tạo
+
+00:00:17.219 --> 00:00:19.950
+một mạng lưới thần kinh lấy
+hình ảnh đầu vào như
+
+00:00:19.950 --> 00:00:22.680
+cái này và xuất ra danh tính
+
+00:00:22.680 --> 00:00:24.795
+của người trong ảnh.
+
+00:00:24.795 --> 00:00:29.445
+Hình ảnh này có kích thước 1.000
+x 1.000 pixel.
+
+00:00:29.445 --> 00:00:32.880
+Đại diện của nó
+trong máy tính là
+
+00:00:32.880 --> 00:00:36.435
+thực tế là lưới 1.000 x 1.000,
+
+00:00:36.435 --> 00:00:38.670
+hay còn gọi là 1.000 nhân 1.000
+
+00:00:38.670 --> 00:00:42.225
+ma trận các
+giá trị cường độ điểm ảnh.
+
+00:00:42.225 --> 00:00:45.080
+Trong ví dụ này,
+các giá trị cường độ pixel của tôi
+
+00:00:45.080 --> 00:00:46.700
+hoặc giá trị độ sáng pixel,
+
+00:00:46.700 --> 00:00:50.745
+đi từ 0-255 và như vậy
+
+00:00:50.745 --> 00:00:53.100
+197 ở đây sẽ là
+
+00:00:53.100 --> 00:00:54.660
+độ sáng của pixel
+
+00:00:54.660 --> 00:00:56.495
+ở phía trên
+bên trái của hình ảnh,
+
+00:00:56.495 --> 00:01:00.245
+185 là độ sáng của
+pixel, trên một pixel,
+
+00:01:00.245 --> 00:01:02.420
+và như vậy xuống đến
+
+00:01:02.420 --> 00:01:06.455
+214 sẽ là góc dưới
+bên phải của hình ảnh này.
+
+00:01:06.455 --> 00:01:08.240
+Nếu bạn định lấy
+
+00:01:08.240 --> 00:01:10.760
+các giá trị cường độ pixel này
+
+00:01:10.760 --> 00:01:13.385
+và hủy cuộn chúng thành một véc-tơ,
+
+00:01:13.385 --> 00:01:16.280
+bạn kết thúc với một
+danh sách hoặc một vectơ
+
+00:01:16.280 --> 00:01:20.085
+của một triệu
+giá trị cường độ điểm ảnh.
+
+00:01:20.085 --> 00:01:22.010
+Một triệu vì 1.000 bởi
+
+00:01:22.010 --> 00:01:24.910
+1.000 ô vuông cho bạn
+một triệu con số.
+
+00:01:24.910 --> 00:01:27.335
+Vấn đề nhận dạng khuôn mặt là,
+
+00:01:27.335 --> 00:01:29.855
+bạn có thể đào tạo một mạng lưới thần kinh
+
+00:01:29.855 --> 00:01:33.155
+lấy làm đầu vào là một
+vectơ đặc trưng với
+
+00:01:33.155 --> 00:01:35.825
+một triệu
+giá trị độ sáng pixel
+
+00:01:35.825 --> 00:01:39.565
+và xuất ra danh tính của
+người trong ảnh.
+
+00:01:39.565 --> 00:01:41.240
+Đây là cách bạn có thể xây dựng
+
+00:01:41.240 --> 00:01:45.235
+một mạng lưới thần kinh để
+thực hiện nhiệm vụ này.
+
+00:01:45.235 --> 00:01:50.130
+Hình ảnh đầu vào X được đưa
+vào lớp tế bào thần kinh này.
+
+00:01:50.130 --> 00:01:52.055
+Đây là lớp ẩn đầu tiên,
+
+00:01:52.055 --> 00:01:55.595
+mà sau đó trích xuất
+một số tính năng.
+
+00:01:55.595 --> 00:01:58.100
+Đầu ra của
+lớp ẩn đầu tiên này là
+
+00:01:58.100 --> 00:02:00.720
+đưa đến một lớp ẩn thứ hai và
+
+00:02:00.720 --> 00:02:02.220
+đầu ra đó được đưa vào
+
+00:02:02.220 --> 00:02:05.600
+lớp thứ ba và
+cuối cùng là lớp đầu ra,
+
+00:02:05.600 --> 00:02:06.870
+mà sau đó ước tính,
+
+00:02:06.870 --> 00:02:10.495
+nói xác suất của việc này
+là một người cụ thể.
+
+00:02:10.495 --> 00:02:13.850
+Một
+điều thú vị là nếu
+
+00:02:13.850 --> 00:02:16.670
+bạn nhìn vào một mạng lưới thần kinh
+đã được đào tạo về
+
+00:02:16.670 --> 00:02:19.340
+rất nhiều hình ảnh của
+khuôn mặt và cố gắng
+
+00:02:19.340 --> 00:02:20.540
+hình dung những gì là
+
+00:02:20.540 --> 00:02:23.090
+những lớp ẩn này,
+cố gắng tính toán.
+
+00:02:23.090 --> 00:02:25.100
+Nó chỉ ra rằng khi bạn
+
+00:02:25.100 --> 00:02:27.620
+đào tạo một hệ thống như thế này
+trên rất nhiều hình ảnh
+
+00:02:27.620 --> 00:02:30.695
+của khuôn mặt và bạn nhìn vào
+
+00:02:30.695 --> 00:02:33.470
+các tế bào thần kinh khác nhau
+trong các lớp ẩn
+
+00:02:33.470 --> 00:02:34.670
+để tìm ra những gì họ có thể được
+
+00:02:34.670 --> 00:02:37.085
+tính toán đây là
+những gì bạn có thể tìm thấy.
+
+00:02:37.085 --> 00:02:39.350
+Trong lớp ẩn đầu tiên,
+
+00:02:39.350 --> 00:02:42.305
+bạn có thể tìm thấy một
+tế bào thần kinh đang tìm kiếm
+
+00:02:42.305 --> 00:02:46.670
+đối với đường thẳng đứng thấp hoặc
+một cạnh thẳng đứng như vậy.
+
+00:02:46.670 --> 00:02:49.065
+Một tế bào thần kinh thứ hai đang tìm kiếm
+
+00:02:49.065 --> 00:02:52.340
+một đường định hướng hoặc
+cạnh định hướng như thế.
+
+00:02:52.340 --> 00:02:54.560
+Tế bào thần kinh thứ ba
+tìm kiếm một dòng
+
+00:02:54.560 --> 00:02:57.400
+theo hướng đó, v.v.
+
+00:02:57.400 --> 00:03:00.545
+Trong các lớp đầu tiên
+của mạng lưới thần kinh,
+
+00:03:00.545 --> 00:03:02.855
+bạn có thể thấy rằng các
+tế bào thần kinh đang tìm kiếm
+
+00:03:02.855 --> 00:03:07.585
+các đường rất ngắn hoặc
+các cạnh rất ngắn trong ảnh.
+
+00:03:07.585 --> 00:03:10.815
+Nếu bạn nhìn vào
+lớp ẩn tiếp theo,
+
+00:03:10.815 --> 00:03:16.690
+bạn thấy rằng những tế bào thần kinh này
+có thể học cách nhóm lại với nhau
+
+00:03:16.690 --> 00:03:18.550
+rất nhiều dòng ngắn và
+
+00:03:18.550 --> 00:03:20.590
+ít phân đoạn cạnh ngắn trong
+
+00:03:20.590 --> 00:03:22.650
+để tìm kiếm
+các bộ phận của khuôn mặt.
+
+00:03:22.650 --> 00:03:26.095
+Ví dụ, mỗi
+hộp vuông nhỏ này là
+
+00:03:26.095 --> 00:03:30.575
+một hình dung về những gì
+tế bào thần kinh đó đang cố gắng phát hiện.
+
+00:03:30.575 --> 00:03:32.320
+Tế bào thần kinh đầu tiên này
+trông giống như nó
+
+00:03:32.320 --> 00:03:34.045
+cố gắng phát hiện sự hiện diện hoặc
+
+00:03:34.045 --> 00:03:38.230
+không có mắt ở một
+vị trí nhất định của ảnh.
+
+00:03:38.230 --> 00:03:40.750
+Tế bào thần kinh thứ hai,
+có vẻ như nó đang cố gắng
+
+00:03:40.750 --> 00:03:43.170
+để phát hiện như một góc của
+
+00:03:43.170 --> 00:03:45.970
+mũi và có thể
+tế bào thần kinh này kết thúc
+
+00:03:45.970 --> 00:03:50.720
+ở đây là cố dò
+đáy tai.
+
+00:03:50.720 --> 00:03:52.810
+Sau đó, khi bạn nhìn
+vào ẩn tiếp theo
+
+00:03:52.810 --> 00:03:54.380
+lớp trong ví dụ này,
+
+00:03:54.380 --> 00:03:56.720
+mạng lưới thần kinh
+đang tổng hợp
+
+00:03:56.720 --> 00:03:59.480
+các bộ phận khác nhau của khuôn mặt để sau đó
+
+00:03:59.480 --> 00:04:01.835
+cố gắng phát hiện sự hiện diện
+hay vắng mặt của
+
+00:04:01.835 --> 00:04:05.260
+hình dạng khuôn mặt lớn hơn, thô hơn.
+
+00:04:05.260 --> 00:04:07.765
+Rồi cuối cùng, phát hiện bao nhiêu
+
+00:04:07.765 --> 00:04:12.020
+khuôn mặt tương ứng với
+các hình dạng khuôn mặt khác nhau tạo ra
+
+00:04:12.020 --> 00:04:14.570
+một tập hợp phong phú các tính năng
+mà sau đó giúp
+
+00:04:14.570 --> 00:04:16.370
+lớp đầu ra cố gắng
+
+00:04:16.370 --> 00:04:19.030
+xác định danh tính
+của hình ảnh người.
+
+00:04:19.030 --> 00:04:21.090
+Một điều đáng chú ý về
+
+00:04:21.090 --> 00:04:22.580
+mạng lưới thần kinh
+là bạn có thể học
+
+00:04:22.580 --> 00:04:24.335
+những máy dò tính năng này tại
+
+00:04:24.335 --> 00:04:27.410
+tất cả các lớp ẩn khác nhau của chính nó.
+
+00:04:27.410 --> 00:04:29.930
+Trong ví dụ này, không
+ai từng nói với nó
+
+00:04:29.930 --> 00:04:32.570
+tìm kiếm các cạnh nhỏ ngắn
+trong lớp đầu tiên,
+
+00:04:32.570 --> 00:04:34.695
+và mắt và mũi
+và các bộ phận trên khuôn mặt
+
+00:04:34.695 --> 00:04:36.260
+lớp thứ hai và sau đó nhiều hơn nữa
+
+00:04:36.260 --> 00:04:38.450
+hoàn thành các hình dạng khuôn mặt
+ở lớp thứ ba.
+
+00:04:38.450 --> 00:04:40.610
+Mạng lưới thần kinh có thể
+tìm ra những điều này
+
+00:04:40.610 --> 00:04:42.840
+tất cả đều tự nó từ dữ liệu.
+
+00:04:42.840 --> 00:04:45.665
+Chỉ cần một lưu ý, trong
+hình dung này,
+
+00:04:45.665 --> 00:04:47.870
+các tế bào thần kinh trong
+lớp ẩn đầu tiên
+
+00:04:47.870 --> 00:04:49.430
+được hiển thị nhìn vào
+
+00:04:49.430 --> 00:04:53.490
+cửa sổ tương đối nhỏ
+để tìm kiếm các cạnh này.
+
+00:04:53.490 --> 00:04:56.540
+Trong lớp ẩn thứ hai
+đang nhìn vào cửa sổ lớn hơn,
+
+00:04:56.540 --> 00:04:57.980
+và lớp ẩn thứ ba là
+
+00:04:57.980 --> 00:05:00.065
+nhìn vào cửa sổ thậm chí còn lớn hơn.
+
+00:05:00.065 --> 00:05:03.470
+Những
+hình ảnh tế bào thần kinh nhỏ này
+
+00:05:03.470 --> 00:05:04.970
+thực sự tương ứng
+với khác nhau
+
+00:05:04.970 --> 00:05:07.030
+các vùng có kích thước trong ảnh.
+
+00:05:07.030 --> 00:05:09.830
+Để giải trí, hãy xem
+điều gì sẽ xảy ra nếu bạn
+
+00:05:09.830 --> 00:05:13.760
+đào tạo mạng thần kinh này
+trên một tập dữ liệu khác,
+
+00:05:13.760 --> 00:05:16.805
+nói trên rất nhiều hình ảnh của xe ô tô,
+
+00:05:16.805 --> 00:05:18.545
+hình bên.
+
+00:05:18.545 --> 00:05:24.200
+Thuật toán học tương tự
+được yêu cầu để phát hiện ô tô,
+
+00:05:24.200 --> 00:05:27.780
+sau đó sẽ học các cạnh
+trong lớp đầu tiên.
+
+00:05:27.780 --> 00:05:29.960
+Khá giống nhau nhưng sau đó họ sẽ
+
+00:05:29.960 --> 00:05:32.180
+học cách phát hiện các bộ phận của ô tô trong
+
+00:05:32.180 --> 00:05:34.280
+lớp ẩn thứ hai
+và sau đó nhiều hơn nữa
+
+00:05:34.280 --> 00:05:37.645
+hoàn thành hình dạng ô tô trong
+lớp ẩn thứ ba.
+
+00:05:37.645 --> 00:05:42.155
+Chỉ bằng cách cung cấp cho nó
+dữ liệu khác nhau,
+
+00:05:42.155 --> 00:05:44.600
+mạng lưới thần kinh
+tự động học cách phát hiện
+
+00:05:44.600 --> 00:05:48.260
+các tính năng rất khác nhau
+để cố gắng
+
+00:05:48.260 --> 00:05:52.385
+đưa ra dự đoán
+phát hiện xe hơi hoặc
+
+00:05:52.385 --> 00:05:54.260
+công nhận người
+hoặc liệu có một
+
+00:05:54.260 --> 00:05:57.385
+nhiệm vụ cụ thể
+được đào tạo.
+
+00:05:57.385 --> 00:05:59.480
+Đó là cách một
+mạng lưới thần kinh hoạt động
+
+00:05:59.480 --> 00:06:01.235
+cho ứng dụng thị giác máy tính.
+
+00:06:01.235 --> 00:06:02.975
+Trên thực tế, vào cuối tuần này,
+
+00:06:02.975 --> 00:06:04.460
+bạn sẽ thấy làm thế nào bạn có thể xây dựng
+
+00:06:04.460 --> 00:06:06.320
+một mạng lưới thần kinh
+cho mình và áp dụng
+
+00:06:06.320 --> 00:06:10.270
+nó vào một ứng dụng nhận dạng chữ số viết tay
+.
+
+00:06:10.270 --> 00:06:13.325
+Cho đến nay chúng tôi đã đi
+qua các mô tả của
+
+00:06:13.325 --> 00:06:15.125
+trực giác của mạng lưới thần kinh
+
+00:06:15.125 --> 00:06:17.665
+để cung cấp cho bạn một cảm giác
+về cách họ làm việc.
+
+00:06:17.665 --> 00:06:19.250
+Trong video tiếp theo,
+
+00:06:19.250 --> 00:06:22.880
+chúng ta hãy nhìn sâu hơn vào
+toán học cụ thể và
+
+00:06:22.880 --> 00:06:25.880
+một triển khai cụ thể
+các chi tiết về cách bạn
+
+00:06:25.880 --> 00:06:29.555
+thực sự xây dựng một hoặc nhiều
+lớp của mạng lưới thần kinh,
+
+00:06:29.555 --> 00:06:31.415
+và do đó làm thế nào
+bạn có thể thực hiện
+
+00:06:31.415 --> 00:06:32.810
+một trong những điều này cho mình.
+
