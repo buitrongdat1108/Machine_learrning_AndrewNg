@@ -1,0 +1,702 @@
+WEBVTT
+
+1
+00:00:02.640 --> 00:00:07.907
+In this video, I want to step through with
+you how data is represented in NumPy and
+
+2
+00:00:07.907 --> 00:00:09.000
+in TensorFlow.
+
+3
+00:00:09.000 --> 00:00:12.426
+So that as you're implementing
+new neural networks,
+
+4
+00:00:12.426 --> 00:00:18.240
+you can have a consistent framework to
+think about how to represent your data.
+
+5
+00:00:18.240 --> 00:00:22.976
+One of the unfortunate things about the
+way things are done in code today is that
+
+6
+00:00:22.976 --> 00:00:27.713
+many, many years ago NumPy was first
+created and became a standard library for
+
+7
+00:00:27.713 --> 00:00:29.840
+linear algebra and Python.
+
+8
+00:00:29.840 --> 00:00:34.053
+And then much later the Google brain team,
+the team that I had started and
+
+9
+00:00:34.053 --> 00:00:36.340
+once led created TensorFlow.
+
+10
+00:00:36.340 --> 00:00:40.796
+And so unfortunately there are some
+inconsistencies between how data is
+
+11
+00:00:40.796 --> 00:00:43.840
+represented in NumPy and in TensorFlow.
+
+12
+00:00:43.840 --> 00:00:47.677
+So it's good to be aware of these
+conventions so that you can implement
+
+13
+00:00:47.677 --> 00:00:52.140
+correct code and hopefully get things
+running in your neural networks.
+
+14
+00:00:52.140 --> 00:00:56.540
+Let's start by taking a look at
+how TensorFlow represents data.
+
+15
+00:00:56.540 --> 00:01:00.651
+Let's see you have a data set like
+this from the coffee example.
+
+16
+00:01:01.740 --> 00:01:05.650
+I mentioned that you
+would write x as follows.
+
+17
+00:01:05.650 --> 00:01:10.840
+So why do you have this
+double square bracket here?
+
+18
+00:01:10.840 --> 00:01:16.071
+Let's take a look at how NumPy
+stores vectors and matrices.
+
+19
+00:01:16.071 --> 00:01:18.236
+In case you think matrices and
+
+20
+00:01:18.236 --> 00:01:23.540
+vectors are complicated mathematical
+concepts don't worry about it.
+
+21
+00:01:23.540 --> 00:01:28.336
+We'll go through a few concrete examples
+and you'll be able to do everything
+
+22
+00:01:28.336 --> 00:01:33.540
+you need to do with matrices and vectors
+in order to implement your networks.
+
+23
+00:01:33.540 --> 00:01:36.740
+Let's start with an example of a matrix.
+
+24
+00:01:36.740 --> 00:01:43.140
+Here is a matrix with 2 rows and
+3 columns.
+
+25
+00:01:43.140 --> 00:01:46.722
+Notice that there are one,
+
+26
+00:01:46.722 --> 00:01:51.740
+two rows and 1, 2, 3 columns.
+
+27
+00:01:51.740 --> 00:01:55.087
+So we call this a 2 x 3 matrix.
+
+28
+00:01:55.087 --> 00:02:00.296
+And so the convention is
+the dimension of the matrix is
+
+29
+00:02:00.296 --> 00:02:05.760
+written as the number of rows
+by the number of columns.
+
+30
+00:02:05.760 --> 00:02:10.762
+So in code to store this matrix,
+this 2 x 3 matrix,
+
+31
+00:02:10.762 --> 00:02:17.040
+you just write x = np.array
+of these numbers like these.
+
+32
+00:02:17.040 --> 00:02:22.821
+Where you notice that the square
+bracket tells you that 1,
+
+33
+00:02:22.821 --> 00:02:27.675
+2, 3 is the first row of this matrix and
+4, 5,
+
+34
+00:02:27.675 --> 00:02:31.640
+6 is the second row of this matrix.
+
+35
+00:02:31.640 --> 00:02:38.040
+And then this open square bracket groups
+the first and the second row together.
+
+36
+00:02:38.040 --> 00:02:43.640
+So this sets x to be this
+to the array of numbers.
+
+37
+00:02:43.640 --> 00:02:47.451
+So matrix is just a 2D array of numbers.
+
+38
+00:02:48.540 --> 00:02:54.040
+Let's look at one more example,
+here I've written out another matrix.
+
+39
+00:02:54.040 --> 00:02:56.740
+How many roles and
+how many columns does this have?
+
+40
+00:02:56.740 --> 00:03:00.444
+Well, you can count this as one, two,
+
+41
+00:03:00.444 --> 00:03:05.440
+three, four rows and
+it has one, two columns.
+
+42
+00:03:05.440 --> 00:03:12.240
+So this is a number of rows by the number
+of columns matrix, so it's a 4 x 2 matrix.
+
+43
+00:03:12.240 --> 00:03:18.204
+And so to store this in code,
+you will write x equals np.array and
+
+44
+00:03:18.204 --> 00:03:25.380
+then this syntax over here to store these
+four rows of matrix in the variable x.
+
+45
+00:03:25.380 --> 00:03:29.555
+So this creates a 2D array
+of these eight numbers.
+
+46
+00:03:29.555 --> 00:03:32.814
+Matrices can have different dimensions.
+
+47
+00:03:32.814 --> 00:03:38.940
+You saw an example of an 2 x 3 matrix and
+the 4 x 2 matrix.
+
+48
+00:03:38.940 --> 00:03:44.261
+A matrix can also be other
+dimensions like 1 x 2 or 2 x 1.
+
+49
+00:03:44.261 --> 00:03:49.040
+And we'll see examples of
+these on the next slide.
+
+50
+00:03:49.040 --> 00:03:55.076
+So what we did previously when
+setting x to be input feature vectors,
+
+51
+00:03:55.076 --> 00:04:02.540
+was set x to be equal to np.array
+with two square brackets, 200, 17.
+
+52
+00:04:02.540 --> 00:04:08.427
+And what that does is this
+creates a 1 x 2 matrix,
+
+53
+00:04:08.427 --> 00:04:12.940
+that is just one row and two columns.
+
+54
+00:04:12.940 --> 00:04:16.862
+Let's look at a different example,
+
+55
+00:04:16.862 --> 00:04:23.692
+if you were to define x to be np.array but
+now written like this,
+
+56
+00:04:23.692 --> 00:04:30.740
+this creates a 2 x 1 matrix that
+has two rows and one column.
+
+57
+00:04:30.740 --> 00:04:34.945
+Because the first row is
+just the number 200 and
+
+58
+00:04:34.945 --> 00:04:38.840
+the second row, is just the number 17.
+
+59
+00:04:38.840 --> 00:04:44.547
+And so this has the same numbers but
+in a 2 x 1 instead of a 1 x 2 matrix.
+
+60
+00:04:44.547 --> 00:04:48.905
+Enough this example on top
+is also called a row vector,
+
+61
+00:04:48.905 --> 00:04:52.340
+is a vector that is just a single row.
+
+62
+00:04:52.340 --> 00:04:55.401
+And this example is also called a column
+
+63
+00:04:55.401 --> 00:04:59.955
+vector because this vector
+that just has a single column.
+
+64
+00:04:59.955 --> 00:05:05.258
+And the difference between using
+double square brackets like this
+
+65
+00:05:05.258 --> 00:05:10.465
+versus a single square bracket like this,
+is that whereas the two
+
+66
+00:05:10.465 --> 00:05:16.351
+examples on top of 2D arrays where one
+of the dimensions happens to be 1.
+
+67
+00:05:17.540 --> 00:05:22.090
+This example results in a 1D vector.
+
+68
+00:05:22.090 --> 00:05:26.790
+So this is just a 1D array
+that has no rows or columns,
+
+69
+00:05:26.790 --> 00:05:32.022
+although by convention we may
+right x as a column like this.
+
+70
+00:05:32.022 --> 00:05:38.142
+So on a contrast this with what we had
+previously done in the first course,
+
+71
+00:05:38.142 --> 00:05:43.093
+which was to write x like this
+with a single square bracket.
+
+72
+00:05:43.093 --> 00:05:46.973
+And that resulted in
+what's called in Python,
+
+73
+00:05:46.973 --> 00:05:49.990
+a 1D vector instead of a 2D matrix.
+
+74
+00:05:49.990 --> 00:05:56.156
+And this technically is not 1 x 2 or 2 x
+1, is just a linear array with no rows or
+
+75
+00:05:56.156 --> 00:06:00.640
+no columns, but
+it's just a list of numbers.
+
+76
+00:06:00.640 --> 00:06:05.576
+So whereas in course one when we're
+working with linear regression and
+
+77
+00:06:05.576 --> 00:06:11.345
+logistic regression, we use these 1D
+vectors to represent the input features x.
+
+78
+00:06:11.345 --> 00:06:16.400
+With TensorFlow the convention is to
+use matrices to represent the data.
+
+79
+00:06:16.400 --> 00:06:18.970
+And why is there this
+switching conventions?
+
+80
+00:06:18.970 --> 00:06:24.330
+Well it turns out that TensorFlow was
+designed to handle very large datasets and
+
+81
+00:06:24.330 --> 00:06:28.410
+by representing the data in
+matrices instead of 1D arrays,
+
+82
+00:06:28.410 --> 00:06:34.140
+it lets TensorFlow be a bit more
+computationally efficient internally.
+
+83
+00:06:34.140 --> 00:06:39.221
+So going back to our original example for
+the first training, example in
+
+84
+00:06:39.221 --> 00:06:45.420
+this dataset with features 200°C in 17
+minutes, we were represented like this.
+
+85
+00:06:45.420 --> 00:06:52.000
+And so this is actually a 1 x 2 matrix
+that happens to have one row and
+
+86
+00:06:52.000 --> 00:06:56.051
+two columns to store the numbers 217.
+
+87
+00:06:57.440 --> 00:07:01.955
+And in case this seems like a lot
+of details and really complicated
+
+88
+00:07:01.955 --> 00:07:06.813
+conventions, don't worry about it
+all of this will become clearer.
+
+89
+00:07:06.813 --> 00:07:11.343
+And you get to see the concrete
+implementations of the code yourself in
+
+90
+00:07:11.343 --> 00:07:14.200
+the optional labs and
+in the practice labs.
+
+91
+00:07:14.200 --> 00:07:18.075
+Going back to the code for
+carrying out for propagation or
+
+92
+00:07:18.075 --> 00:07:20.427
+influence in the neural network.
+
+93
+00:07:20.427 --> 00:07:26.340
+When you compute a1 equals layer
+1 applied to x, what is a1?
+
+94
+00:07:26.340 --> 00:07:31.333
+Well, a1 is actually going to
+be because the three numbers,
+
+95
+00:07:31.333 --> 00:07:35.040
+is actually going to be a 1 x 3 matrix.
+
+96
+00:07:35.040 --> 00:07:40.167
+And if you print out a1 you
+will get something like this
+
+97
+00:07:40.167 --> 00:07:45.854
+is tf.tensor 0.2, 0.7,
+0.3 as a shape of 1 x 3,
+
+98
+00:07:45.854 --> 00:07:50.108
+1, 3 refers to that
+this is a 1 x 3 matrix.
+
+99
+00:07:50.108 --> 00:07:54.790
+And this is TensorFlow's way of saying
+that this is a floating point number
+
+100
+00:07:54.790 --> 00:07:59.475
+meaning that it's a number that can
+have a decimal point represented using
+
+101
+00:07:59.475 --> 00:08:04.540
+32 bits of memory in your computer,
+that's where the float 32 is.
+
+102
+00:08:04.540 --> 00:08:05.776
+And what is the tensor?
+
+103
+00:08:05.776 --> 00:08:10.640
+A tensor here is a data type that the
+TensorFlow team had created in order to
+
+104
+00:08:10.640 --> 00:08:15.240
+store and carry out computations
+on matrices efficiently.
+
+105
+00:08:15.240 --> 00:08:20.281
+So whenever you see tensor just think
+of that matrix on these few slides.
+
+106
+00:08:20.281 --> 00:08:25.202
+Technically a tensor is a little bit
+more general than the matrix but for
+
+107
+00:08:25.202 --> 00:08:27.252
+the purposes of this course,
+
+108
+00:08:27.252 --> 00:08:31.118
+think of tensor as just a way
+of representing matrices.
+
+109
+00:08:31.118 --> 00:08:35.579
+So remember I said at the start of this
+video that there's the TensorFlow way of
+
+110
+00:08:35.579 --> 00:08:39.840
+representing the matrix and
+the NumPy way of representing matrix.
+
+111
+00:08:39.840 --> 00:08:43.448
+This is an artifact of
+the history of how NumPy and
+
+112
+00:08:43.448 --> 00:08:48.200
+TensorFlow were created and
+unfortunately there are two ways of
+
+113
+00:08:48.200 --> 00:08:53.840
+representing a matrix that have
+been baked into these systems.
+
+114
+00:08:53.840 --> 00:08:57.907
+And in fact if you want to
+take a1 which is a tensor and
+
+115
+00:08:57.907 --> 00:09:04.483
+want to convert it back to NumPy array,
+you can do so with this function a1.numpy.
+
+116
+00:09:04.483 --> 00:09:09.467
+And it will take the same data and
+return it in the form of a NumPy array
+
+117
+00:09:09.467 --> 00:09:14.640
+rather than in the form of a TensorFlow
+array or TensorFlow matrix.
+
+118
+00:09:14.640 --> 00:09:18.900
+Now let's take a look at what the
+activations output the second layer would
+
+119
+00:09:18.900 --> 00:09:19.585
+look like.
+
+120
+00:09:19.585 --> 00:09:22.149
+Here's the code that we had from before,
+
+121
+00:09:22.149 --> 00:09:26.108
+layer 2 is a dense layer with one unit and
+sigmoid activation and
+
+122
+00:09:26.108 --> 00:09:31.040
+a2 is computed by taking layer 2 and
+applying it to a1 so what is a2?
+
+123
+00:09:31.040 --> 00:09:35.009
+A2, maybe a number like 0.8 and
+
+124
+00:09:35.009 --> 00:09:42.019
+technically this is a 1 x 1 matrix
+is a 2D array with one row and
+
+125
+00:09:42.019 --> 00:09:48.340
+one column and so
+it's equal to this number 0.8.
+
+126
+00:09:48.340 --> 00:09:53.492
+And if you print out a2,
+you see that it is a TensorFlow
+
+127
+00:09:53.492 --> 00:10:00.230
+tensor with just one element one
+number 0.8 and it is a 1 x 1 matrix.
+
+128
+00:10:00.230 --> 00:10:02.153
+And again it is a float32,
+
+129
+00:10:02.153 --> 00:10:06.408
+decimal points number taking
+up 32 bits in computer memory.
+
+130
+00:10:08.440 --> 00:10:13.222
+Once again you can convert
+from a tensorflow tensor to
+
+131
+00:10:13.222 --> 00:10:16.410
+a NumPy matrix using a2.numpy and
+
+132
+00:10:16.410 --> 00:10:22.640
+that will turn this back into
+a NumPy array that looks like this.
+
+133
+00:10:22.640 --> 00:10:27.920
+So that hopefully gives you a sense of
+how data is represented in TensorFlow and
+
+134
+00:10:27.920 --> 00:10:28.646
+in NumPy.
+
+135
+00:10:28.646 --> 00:10:34.059
+I'm used to loading data and manipulating
+data in NumPy, but when you pass a NumPy
+
+136
+00:10:34.059 --> 00:10:39.641
+array into TensorFlow, TensorFlow likes
+to convert it to its own internal format.
+
+137
+00:10:39.641 --> 00:10:43.740
+The tensor and
+then operate efficiently using tensors.
+
+138
+00:10:43.740 --> 00:10:47.617
+And when you read the data back
+out you can keep it as a tensor or
+
+139
+00:10:47.617 --> 00:10:50.640
+convert it back to a NumPy array.
+
+140
+00:10:50.640 --> 00:10:55.410
+I think it's a bit unfortunate that the
+history of how these library evolved has
+
+141
+00:10:55.410 --> 00:10:58.257
+let us have to do this
+extra conversion work when
+
+142
+00:10:58.257 --> 00:11:02.440
+actually the two libraries
+can work quite well together.
+
+143
+00:11:02.440 --> 00:11:06.769
+But when you convert back and forth,
+whether you're using a NumPy array or
+
+144
+00:11:06.769 --> 00:11:11.041
+a tensor, it's just something to be
+aware of when you're writing code.
+
+145
+00:11:11.041 --> 00:11:13.339
+Next let's take what we've learned and
+
+146
+00:11:13.339 --> 00:11:16.400
+put it together to actually
+build a neural network.
+
+147
+00:11:16.400 --> 00:11:18.350
+Let's go see that in the next video.

@@ -1,0 +1,554 @@
+WEBVTT
+Kind: captions
+Language: vi
+
+00:00:02.640 --> 00:00:07.907
+Trong video này, tôi muốn hướng dẫn
+bạn cách dữ liệu được biểu diễn trong NumPy và
+
+00:00:07.907 --> 00:00:09.000
+trong TenorFlow.
+
+00:00:09.000 --> 00:00:12.426
+Vì vậy, khi bạn đang triển khai
+các mạng thần kinh mới,
+
+00:00:12.426 --> 00:00:18.240
+bạn có thể có một khuôn khổ nhất quán để
+suy nghĩ về cách thể hiện dữ liệu của mình.
+
+00:00:18.240 --> 00:00:22.976
+Một trong những điều đáng tiếc về
+cách mọi thứ được thực hiện bằng mã ngày nay là
+
+00:00:22.976 --> 00:00:27.713
+nhiều, nhiều năm trước, NumPy lần đầu tiên
+được tạo và trở thành một thư viện tiêu chuẩn cho
+
+00:00:27.713 --> 00:00:29.840
+đại số tuyến tính và Python.
+
+00:00:29.840 --> 00:00:34.053
+Và sau đó rất lâu, nhóm bộ não của Google,
+nhóm mà tôi đã thành lập và
+
+00:00:34.053 --> 00:00:36.340
+TensorFlow đã từng được lãnh đạo tạo ra.
+
+00:00:36.340 --> 00:00:40.796
+Và thật không may, có một số
+mâu thuẫn giữa cách dữ liệu
+
+00:00:40.796 --> 00:00:43.840
+đại diện trong NumPy và trong TensorFlow.
+
+00:00:43.840 --> 00:00:47.677
+Vì vậy, thật tốt khi nhận thức được các
+quy ước này để bạn có thể thực hiện
+
+00:00:47.677 --> 00:00:52.140
+mã chính xác và hy vọng mọi thứ sẽ
+chạy trong mạng lưới thần kinh của bạn.
+
+00:00:52.140 --> 00:00:56.540
+Hãy bắt đầu bằng cách xem
+cách TensorFlow thể hiện dữ liệu.
+
+00:00:56.540 --> 00:01:00.651
+Hãy xem bạn có một tập dữ liệu như thế
+này từ ví dụ về cà phê.
+
+00:01:01.740 --> 00:01:05.650
+Tôi đã đề cập rằng bạn
+sẽ viết x như sau.
+
+00:01:05.650 --> 00:01:10.840
+Vậy tại sao bạn có
+dấu ngoặc vuông kép này ở đây?
+
+00:01:10.840 --> 00:01:16.071
+Chúng ta hãy xem cách NumPy
+lưu trữ vectơ và ma trận.
+
+00:01:16.071 --> 00:01:18.236
+Trong trường hợp bạn nghĩ ma trận và
+
+00:01:18.236 --> 00:01:23.540
+vectơ là những
+khái niệm toán học phức tạp, đừng lo lắng về điều đó.
+
+00:01:23.540 --> 00:01:28.336
+Chúng ta sẽ đi qua một vài ví dụ cụ thể
+và bạn sẽ có thể làm mọi thứ
+
+00:01:28.336 --> 00:01:33.540
+bạn cần làm với ma trận và vectơ
+để triển khai mạng của mình.
+
+00:01:33.540 --> 00:01:36.740
+Hãy bắt đầu với một ví dụ về ma trận.
+
+00:01:36.740 --> 00:01:43.140
+Đây là một ma trận có 2 hàng và
+3 cột.
+
+00:01:43.140 --> 00:01:46.722
+Lưu ý rằng có một,
+
+00:01:46.722 --> 00:01:51.740
+hai hàng và 1, 2, 3 cột.
+
+00:01:51.740 --> 00:01:55.087
+Vì vậy, chúng tôi gọi đây là ma trận 2 x 3.
+
+00:01:55.087 --> 00:02:00.296
+Và do đó, quy ước là
+số chiều của ma trận là
+
+00:02:00.296 --> 00:02:05.760
+được viết dưới dạng số hàng
+bằng số cột.
+
+00:02:05.760 --> 00:02:10.762
+Vì vậy, trong mã để lưu trữ ma trận này, ma trận
+2 x 3 này,
+
+00:02:10.762 --> 00:02:17.040
+bạn chỉ cần viết x = np.array
+của những số như thế này.
+
+00:02:17.040 --> 00:02:22.821
+Nơi bạn nhận thấy rằng dấu
+ngoặc vuông cho bạn biết rằng 1,
+
+00:02:22.821 --> 00:02:27.675
+2, 3 là hàng đầu tiên của ma trận này và
+4, 5,
+
+00:02:27.675 --> 00:02:31.640
+6 là hàng thứ hai của ma trận này.
+
+00:02:31.640 --> 00:02:38.040
+Và sau đó, dấu ngoặc vuông mở này sẽ nhóm
+hàng đầu tiên và hàng thứ hai lại với nhau.
+
+00:02:38.040 --> 00:02:43.640
+Vì vậy, cái này đặt x thành cái này
+cho mảng số.
+
+00:02:43.640 --> 00:02:47.451
+Vì vậy, ma trận chỉ là một mảng số 2D.
+
+00:02:48.540 --> 00:02:54.040
+Hãy xem một ví dụ nữa,
+ở đây tôi đã viết ra một ma trận khác.
+
+00:02:54.040 --> 00:02:56.740
+Cái này có bao nhiêu vai trò và
+bao nhiêu cột?
+
+00:02:56.740 --> 00:03:00.444
+Chà, bạn có thể coi đây là một, hai,
+
+00:03:00.444 --> 00:03:05.440
+ba, bốn hàng và
+nó có một, hai cột.
+
+00:03:05.440 --> 00:03:12.240
+Đây là số hàng nhân với
+ma trận số cột, nên nó là ma trận 4 x 2.
+
+00:03:12.240 --> 00:03:18.204
+Và để lưu mã này trong mã,
+bạn sẽ viết x bằng np.array và
+
+00:03:18.204 --> 00:03:25.380
+thì cú pháp này ở đây để lưu trữ
+bốn hàng ma trận này trong biến x.
+
+00:03:25.380 --> 00:03:29.555
+Vì vậy, điều này tạo ra một mảng 2D
+gồm tám số này.
+
+00:03:29.555 --> 00:03:32.814
+Các ma trận có thể có các kích thước khác nhau.
+
+00:03:32.814 --> 00:03:38.940
+Bạn đã thấy một ví dụ về ma trận 2 x 3 và ma trận
+4 x 2.
+
+00:03:38.940 --> 00:03:44.261
+Một ma trận cũng có thể là các
+kích thước khác như 1 x 2 hoặc 2 x 1.
+
+00:03:44.261 --> 00:03:49.040
+Và chúng ta sẽ thấy các ví dụ về
+những điều này trên slide tiếp theo.
+
+00:03:49.040 --> 00:03:55.076
+Vì vậy, những gì chúng tôi đã làm trước đây khi
+đặt x là vectơ đặc trưng đầu vào,
+
+00:03:55.076 --> 00:04:02.540
+đã được đặt x bằng np.array
+với hai dấu ngoặc vuông, 200, 17.
+
+00:04:02.540 --> 00:04:08.427
+Và những gì nó làm là
+tạo ra một ma trận 1 x 2,
+
+00:04:08.427 --> 00:04:12.940
+đó chỉ là một hàng và hai cột.
+
+00:04:12.940 --> 00:04:16.862
+Hãy xem xét một ví dụ khác,
+
+00:04:16.862 --> 00:04:23.692
+nếu bạn định nghĩa x là np.array nhưng
+bây giờ được viết như thế này,
+
+00:04:23.692 --> 00:04:30.740
+điều này tạo ra một ma trận 2 x 1
+có hai hàng và một cột.
+
+00:04:30.740 --> 00:04:34.945
+Bởi vì hàng đầu tiên
+chỉ là số 200 và
+
+00:04:34.945 --> 00:04:38.840
+hàng thứ hai, chỉ là số 17.
+
+00:04:38.840 --> 00:04:44.547
+Và do đó, cái này có cùng số nhưng
+trong ma trận 2 x 1 thay vì ma trận 1 x 2.
+
+00:04:44.547 --> 00:04:48.905
+Đủ ví dụ trên cùng
+này cũng được gọi là một vectơ hàng,
+
+00:04:48.905 --> 00:04:52.340
+là một vectơ chỉ là một hàng.
+
+00:04:52.340 --> 00:04:55.401
+Và ví dụ này còn được gọi là cột
+
+00:04:55.401 --> 00:04:59.955
+vectơ vì vectơ này
+chỉ có một cột duy nhất.
+
+00:04:59.955 --> 00:05:05.258
+Và sự khác biệt giữa việc sử dụng
+dấu ngoặc vuông kép như thế này
+
+00:05:05.258 --> 00:05:10.465
+so với một dấu ngoặc vuông duy nhất như thế này,
+đó là trong khi hai
+
+00:05:10.465 --> 00:05:16.351
+các ví dụ trên các mảng 2D trong đó một
+trong các kích thước xảy ra là 1.
+
+00:05:17.540 --> 00:05:22.090
+Ví dụ này dẫn đến một vectơ 1D.
+
+00:05:22.090 --> 00:05:26.790
+Vì vậy, đây chỉ là mảng 1D
+không có hàng hoặc cột,
+
+00:05:26.790 --> 00:05:32.022
+mặc dù theo quy ước, chúng ta có thể
+để x thành một cột như thế này.
+
+00:05:32.022 --> 00:05:38.142
+Vì vậy, ngược lại điều này với những gì chúng tôi đã
+làm trước đây trong khóa học đầu tiên,
+
+00:05:38.142 --> 00:05:43.093
+nghĩa là viết x như thế này
+với một dấu ngoặc vuông.
+
+00:05:43.093 --> 00:05:46.973
+Và điều đó dẫn đến
+cái được gọi là trong Python,
+
+00:05:46.973 --> 00:05:49.990
+một vectơ 1D thay vì ma trận 2D.
+
+00:05:49.990 --> 00:05:56.156
+Và về mặt kỹ thuật, đây không phải là 1 x 2 hay 2 x
+1, chỉ là một mảng tuyến tính không có hàng hoặc
+
+00:05:56.156 --> 00:06:00.640
+không có cột, nhưng
+nó chỉ là một danh sách các số.
+
+00:06:00.640 --> 00:06:05.576
+Vì vậy, trong khi tất nhiên là khi chúng ta đang
+làm việc với hồi quy tuyến tính và
+
+00:06:05.576 --> 00:06:11.345
+hồi quy logistic, chúng tôi sử dụng các
+vectơ 1D này để biểu thị các tính năng đầu vào x.
+
+00:06:11.345 --> 00:06:16.400
+Với TensorFlow, quy ước là
+sử dụng ma trận để biểu diễn dữ liệu.
+
+00:06:16.400 --> 00:06:18.970
+Và tại sao có
+quy ước chuyển đổi này?
+
+00:06:18.970 --> 00:06:24.330
+Chà, hóa ra TensorFlow được
+thiết kế để xử lý các bộ dữ liệu rất lớn và
+
+00:06:24.330 --> 00:06:28.410
+bằng cách biểu diễn dữ liệu trong
+ma trận thay vì mảng 1D,
+
+00:06:28.410 --> 00:06:34.140
+nó cho phép TensorFlow
+hiệu quả hơn một chút về mặt tính toán trong nội bộ.
+
+00:06:34.140 --> 00:06:39.221
+Vì vậy, quay trở lại ví dụ ban đầu của chúng tôi cho
+khóa đào tạo đầu tiên, ví dụ trong
+
+00:06:39.221 --> 00:06:45.420
+tập dữ liệu này với các tính năng 200°C trong 17
+phút, chúng tôi được trình bày như thế này.
+
+00:06:45.420 --> 00:06:52.000
+Và đây thực sự là ma trận 1 x 2
+có một hàng và
+
+00:06:52.000 --> 00:06:56.051
+hai cột để lưu các số 217.
+
+00:06:57.440 --> 00:07:01.955
+Và trong trường hợp điều này có vẻ như rất nhiều
+chi tiết và thực sự phức tạp
+
+00:07:01.955 --> 00:07:06.813
+quy ước, đừng lo lắng về nó,
+tất cả điều này sẽ trở nên rõ ràng hơn.
+
+00:07:06.813 --> 00:07:11.343
+Và bạn có thể tự mình xem các
+triển khai cụ thể của mã trong
+
+00:07:11.343 --> 00:07:14.200
+các phòng thí nghiệm tùy chọn và
+trong các phòng thí nghiệm thực hành.
+
+00:07:14.200 --> 00:07:18.075
+Quay trở lại mã để
+thực hiện để nhân giống hoặc
+
+00:07:18.075 --> 00:07:20.427
+ảnh hưởng trong mạng nơ-ron.
+
+00:07:20.427 --> 00:07:26.340
+Khi bạn tính a1 bằng lớp
+1 áp dụng cho x, a1 là gì?
+
+00:07:26.340 --> 00:07:31.333
+Chà, a1 thực sự sẽ
+là vì ba số,
+
+00:07:31.333 --> 00:07:35.040
+thực sự sẽ là một ma trận 1 x 3.
+
+00:07:35.040 --> 00:07:40.167
+Và nếu bạn in ra a1, bạn
+sẽ nhận được một cái gì đó như thế này
+
+00:07:40.167 --> 00:07:45.854
+là tf.tensor 0,2, 0,7,
+0,3 dưới dạng hình 1 x 3,
+
+00:07:45.854 --> 00:07:50.108
+1, 3 ám chỉ rằng
+đây là ma trận 1 x 3.
+
+00:07:50.108 --> 00:07:54.790
+Và đây là cách nói của TensorFlow
+rằng đây là một số dấu phẩy động
+
+00:07:54.790 --> 00:07:59.475
+nghĩa là đó là một số có thể
+có dấu thập phân được biểu thị bằng cách sử dụng
+
+00:07:59.475 --> 00:08:04.540
+Bộ nhớ 32 bit trong máy tính của bạn,
+đó là nơi chứa số float 32.
+
+00:08:04.540 --> 00:08:05.776
+Và tenxơ là gì?
+
+00:08:05.776 --> 00:08:10.640
+Tensor ở đây là loại dữ liệu mà
+nhóm TensorFlow đã tạo để
+
+00:08:10.640 --> 00:08:15.240
+lưu trữ và thực hiện các tính toán
+trên ma trận một cách hiệu quả.
+
+00:08:15.240 --> 00:08:20.281
+Vì vậy, bất cứ khi nào bạn nhìn thấy tenxơ, chỉ cần nghĩ
+đến ma trận đó trên một vài trang trình bày này.
+
+00:08:20.281 --> 00:08:25.202
+Về mặt kỹ thuật, một tenxơ tổng quát hơn một chút so với ma trận nhưng đối với
+
+00:08:25.202 --> 00:08:27.252
+mục đích của khóa học này,
+
+00:08:27.252 --> 00:08:31.118
+nghĩ về tenor chỉ là một cách
+biểu diễn ma trận.
+
+00:08:31.118 --> 00:08:35.579
+Vì vậy, hãy nhớ rằng tôi đã nói ở đầu
+video này rằng có cách TensorFlow để
+
+00:08:35.579 --> 00:08:39.840
+đại diện cho ma trận và
+cách NumPy đại diện cho ma trận.
+
+00:08:39.840 --> 00:08:43.448
+Đây là một hiện vật của
+lịch sử về cách NumPy và
+
+00:08:43.448 --> 00:08:48.200
+TensorFlow đã được tạo và
+thật không may, có hai cách
+
+00:08:48.200 --> 00:08:53.840
+đại diện cho một ma trận đã
+được đưa vào các hệ thống này.
+
+00:08:53.840 --> 00:08:57.907
+Và trên thực tế, nếu bạn muốn
+lấy a1 là một tensor và
+
+00:08:57.907 --> 00:09:04.483
+muốn chuyển đổi nó trở lại mảng NumPy,
+bạn có thể làm như vậy với chức năng này a1.numpy.
+
+00:09:04.483 --> 00:09:09.467
+Và nó sẽ lấy cùng một dữ liệu và
+trả về dưới dạng một mảng NumPy
+
+00:09:09.467 --> 00:09:14.640
+thay vì ở dạng
+mảng TensorFlow hoặc ma trận TensorFlow.
+
+00:09:14.640 --> 00:09:18.900
+Bây giờ chúng ta hãy xem kết quả
+kích hoạt của lớp thứ hai sẽ như thế nào
+
+00:09:18.900 --> 00:09:19.585
+trông giống như.
+
+00:09:19.585 --> 00:09:22.149
+Đây là mã mà chúng ta có từ trước,
+
+00:09:22.149 --> 00:09:26.108
+lớp 2 là một lớp dày đặc với một đơn vị và
+kích hoạt sigmoid và
+
+00:09:26.108 --> 00:09:31.040
+a2 được tính bằng cách lấy lớp 2 và
+áp dụng nó cho a1 vậy a2 là gì?
+
+00:09:31.040 --> 00:09:35.009
+A2, có thể là một số như 0,8 và
+
+00:09:35.009 --> 00:09:42.019
+về mặt kỹ thuật, đây là ma trận 1 x 1
+là một mảng 2D có một hàng và
+
+00:09:42.019 --> 00:09:48.340
+một cột và do
+đó nó bằng số này 0,8.
+
+00:09:48.340 --> 00:09:53.492
+Và nếu bạn in ra a2,
+bạn sẽ thấy đó là TensorFlow
+
+00:09:53.492 --> 00:10:00.230
+tensor chỉ với một phần tử một
+số 0,8 và nó là ma trận 1 x 1.
+
+00:10:00.230 --> 00:10:02.153
+Và một lần nữa nó là float32,
+
+00:10:02.153 --> 00:10:06.408
+số dấu thập phân chiếm
+32 bit trong bộ nhớ máy tính.
+
+00:10:08.440 --> 00:10:13.222
+Một lần nữa, bạn có thể chuyển đổi
+từ tensorflow tensor thành
+
+00:10:13.222 --> 00:10:16.410
+một ma trận NumPy sử dụng a2.numpy và
+
+00:10:16.410 --> 00:10:22.640
+điều đó sẽ biến cái này trở lại thành
+một mảng NumPy trông như thế này.
+
+00:10:22.640 --> 00:10:27.920
+Vì vậy, điều đó hy vọng mang lại cho bạn cảm giác về
+cách dữ liệu được biểu diễn trong TensorFlow và
+
+00:10:27.920 --> 00:10:28.646
+trong NumPy.
+
+00:10:28.646 --> 00:10:34.059
+Tôi đã quen với việc tải dữ liệu và thao tác
+dữ liệu trong NumPy, nhưng khi bạn vượt qua NumPy
+
+00:10:34.059 --> 00:10:39.641
+mảng thành TensorFlow, TensorFlow thích
+chuyển đổi nó sang định dạng bên trong của chính nó.
+
+00:10:39.641 --> 00:10:43.740
+tensor và
+sau đó hoạt động hiệu quả bằng cách sử dụng tensors.
+
+00:10:43.740 --> 00:10:47.617
+Và khi bạn đọc lại dữ liệu
+, bạn có thể giữ nó dưới dạng tensor hoặc
+
+00:10:47.617 --> 00:10:50.640
+chuyển đổi nó trở lại một mảng NumPy.
+
+00:10:50.640 --> 00:10:55.410
+Tôi nghĩ hơi đáng tiếc là
+lịch sử phát triển của những thư viện này đã
+
+00:10:55.410 --> 00:10:58.257
+chúng ta hãy thực hiện
+công việc chuyển đổi bổ sung này khi
+
+00:10:58.257 --> 00:11:02.440
+trên thực tế, hai thư viện
+có thể hoạt động khá tốt với nhau.
+
+00:11:02.440 --> 00:11:06.769
+Nhưng khi bạn chuyển đổi qua lại,
+cho dù bạn đang sử dụng mảng NumPy hay
+
+00:11:06.769 --> 00:11:11.041
+một tenxơ, nó chỉ là thứ cần lưu
+ý khi bạn viết mã.
+
+00:11:11.041 --> 00:11:13.339
+Tiếp theo, hãy lấy những gì chúng ta đã học và
+
+00:11:13.339 --> 00:11:16.400
+đặt nó lại với nhau để thực sự
+xây dựng một mạng lưới thần kinh.
+

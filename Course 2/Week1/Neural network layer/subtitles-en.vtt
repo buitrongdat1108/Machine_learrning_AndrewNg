@@ -1,0 +1,859 @@
+WEBVTT
+
+1
+00:00:01.700 --> 00:00:04.530
+The fundamental
+building block of
+
+2
+00:00:04.530 --> 00:00:08.190
+most modern neural networks
+is a layer of neurons.
+
+3
+00:00:08.190 --> 00:00:10.740
+In this video, you'll
+learn how to construct
+
+4
+00:00:10.740 --> 00:00:13.725
+a layer of neurons and
+once you have that down,
+
+5
+00:00:13.725 --> 00:00:16.170
+you'd be able to take those
+building blocks and put them
+
+6
+00:00:16.170 --> 00:00:18.915
+together to form a
+large neural network.
+
+7
+00:00:18.915 --> 00:00:22.560
+Let's take a look at how
+a layer of neurons works.
+
+8
+00:00:22.560 --> 00:00:24.450
+Here's the example we had from
+
+9
+00:00:24.450 --> 00:00:27.090
+the demand prediction
+example where we
+
+10
+00:00:27.090 --> 00:00:29.970
+had four input features
+that were set to
+
+11
+00:00:29.970 --> 00:00:34.110
+this layer of three neurons
+in the hidden layer
+
+12
+00:00:34.110 --> 00:00:36.570
+that then sends its output to
+
+13
+00:00:36.570 --> 00:00:39.555
+this output layer
+with just one neuron.
+
+14
+00:00:39.555 --> 00:00:41.690
+Let's zoom in to
+
+15
+00:00:41.690 --> 00:00:46.225
+the hidden layer to look
+at its computations.
+
+16
+00:00:46.225 --> 00:00:49.770
+This hidden layer
+inputs four numbers and
+
+17
+00:00:49.770 --> 00:00:54.735
+these four numbers are inputs
+to each of three neurons.
+
+18
+00:00:54.735 --> 00:00:58.985
+Each of these three neurons
+is just implementing
+
+19
+00:00:58.985 --> 00:01:01.550
+a little logistic
+regression unit
+
+20
+00:01:01.550 --> 00:01:04.210
+or a little bit logistic
+regression function.
+
+21
+00:01:04.210 --> 00:01:06.510
+Take this first neuron.
+
+22
+00:01:06.510 --> 00:01:11.145
+It has two parameters, w and b.
+
+23
+00:01:11.145 --> 00:01:13.010
+In fact, to denote that,
+
+24
+00:01:13.010 --> 00:01:15.365
+this is the first hidden unit,
+
+25
+00:01:15.365 --> 00:01:19.720
+I'm going to subscript
+this as w_1, b_1.
+
+26
+00:01:19.720 --> 00:01:24.110
+What it does is I'll output
+some activation value a,
+
+27
+00:01:24.110 --> 00:01:31.820
+which is g of w_1 in a
+product with x plus b_1,
+
+28
+00:01:31.820 --> 00:01:36.230
+where this is the
+familiar z value that you
+
+29
+00:01:36.230 --> 00:01:37.970
+have learned about in
+
+30
+00:01:37.970 --> 00:01:40.825
+logistic regression in
+the previous course,
+
+31
+00:01:40.825 --> 00:01:46.620
+and g of z is the familiar
+logistic function,
+
+32
+00:01:46.620 --> 00:01:49.920
+1 over 1 plus e to
+the negative z.
+
+33
+00:01:49.920 --> 00:01:54.290
+Maybe this ends up
+being a number 0.3 and
+
+34
+00:01:54.290 --> 00:01:58.600
+that's the activation value
+a of the first neuron.
+
+35
+00:01:58.600 --> 00:02:00.810
+To denote that this
+is the first neuron,
+
+36
+00:02:00.810 --> 00:02:04.080
+I'm also going to add a
+subscript a_1 over here,
+
+37
+00:02:04.080 --> 00:02:07.125
+and so a_1 may be
+a number like 0.3.
+
+38
+00:02:07.125 --> 00:02:09.890
+There's a 0.3 chance of
+
+39
+00:02:09.890 --> 00:02:13.600
+this being highly affordable
+based on the input features.
+
+40
+00:02:13.600 --> 00:02:15.830
+Now let's look at
+the second neuron.
+
+41
+00:02:15.830 --> 00:02:22.225
+The second neuron has
+parameters w_2 and b_2,
+
+42
+00:02:22.225 --> 00:02:23.850
+and these w,
+
+43
+00:02:23.850 --> 00:02:24.900
+b or w_2,
+
+44
+00:02:24.900 --> 00:02:28.725
+b_2 are the parameters of
+the second logistic unit.
+
+45
+00:02:28.725 --> 00:02:34.955
+It computes a_2 equals the
+logistic function g applied to
+
+46
+00:02:34.955 --> 00:02:38.629
+w_2 dot product x plus
+
+47
+00:02:38.629 --> 00:02:43.890
+b_2 and this may be some
+other number, say 0.7.
+
+48
+00:02:43.890 --> 00:02:45.205
+Because in this example,
+
+49
+00:02:45.205 --> 00:02:47.470
+there's a 0.7 chance that we
+
+50
+00:02:47.470 --> 00:02:51.695
+think the potential buyers
+will be aware of this t-shirt.
+
+51
+00:02:51.695 --> 00:02:54.400
+Similarly, the third neuron has
+
+52
+00:02:54.400 --> 00:02:57.445
+a third set of
+parameters w_3, b_3.
+
+53
+00:02:57.445 --> 00:02:58.750
+Similarly, it computes
+
+54
+00:02:58.750 --> 00:03:01.570
+an activation value
+a_3 equals g of
+
+55
+00:03:01.570 --> 00:03:06.305
+w_3 dot product x plus b_3
+and that may be say, 0.2.
+
+56
+00:03:06.305 --> 00:03:10.410
+In this example, these
+three neurons output 0.3,
+
+57
+00:03:10.410 --> 00:03:12.450
+0.7, and 0.2,
+
+58
+00:03:12.450 --> 00:03:16.220
+and this vector of three numbers
+
+59
+00:03:16.220 --> 00:03:21.840
+becomes the vector of
+activation values a,
+
+60
+00:03:21.840 --> 00:03:24.200
+that is then passed to
+
+61
+00:03:24.200 --> 00:03:27.890
+the final output layer
+of this neural network.
+
+62
+00:03:27.890 --> 00:03:29.720
+Now, when you build
+
+63
+00:03:29.720 --> 00:03:31.745
+neural networks with
+multiple layers,
+
+64
+00:03:31.745 --> 00:03:35.840
+it'll be useful to give the
+layers different numbers.
+
+65
+00:03:35.840 --> 00:03:41.220
+By convention, this layer
+is called layer 1 of
+
+66
+00:03:41.220 --> 00:03:43.770
+the neural network
+and this layer is
+
+67
+00:03:43.770 --> 00:03:46.815
+called layer 2 of
+the neural network.
+
+68
+00:03:46.815 --> 00:03:49.220
+The input layer
+is also sometimes
+
+69
+00:03:49.220 --> 00:03:52.590
+called layer 0 and today,
+
+70
+00:03:52.590 --> 00:03:54.200
+there are neural
+networks that can have
+
+71
+00:03:54.200 --> 00:03:56.885
+dozens or even
+hundreds of layers.
+
+72
+00:03:56.885 --> 00:04:00.320
+But in order to
+introduce notation
+
+73
+00:04:00.320 --> 00:04:03.440
+to help us distinguish
+between the different layers,
+
+74
+00:04:03.440 --> 00:04:07.220
+I'm going to use
+superscript square bracket
+
+75
+00:04:07.220 --> 00:04:11.820
+1 to index into
+different layers.
+
+76
+00:04:11.820 --> 00:04:14.585
+In particular, a superscript
+
+77
+00:04:14.585 --> 00:04:17.250
+in square brackets
+1, I'm going to use,
+
+78
+00:04:17.250 --> 00:04:20.400
+that's a notation to
+denote the output of
+
+79
+00:04:20.400 --> 00:04:24.125
+layer 1 of this hidden layer
+of this neural network,
+
+80
+00:04:24.125 --> 00:04:26.940
+and similarly, w_1,
+
+81
+00:04:26.940 --> 00:04:29.180
+b_1 here are the parameters of
+
+82
+00:04:29.180 --> 00:04:33.000
+the first unit in layer
+1 of the neural network,
+
+83
+00:04:33.000 --> 00:04:34.190
+so I'm also going to add
+
+84
+00:04:34.190 --> 00:04:36.260
+a superscript in
+square brackets 1
+
+85
+00:04:36.260 --> 00:04:40.110
+here, and w_2,
+
+86
+00:04:40.110 --> 00:04:41.810
+b_2 are the parameters of
+
+87
+00:04:41.810 --> 00:04:44.795
+the second hidden unit
+
+88
+00:04:44.795 --> 00:04:47.890
+or the second hidden
+neuron in layer 1.
+
+89
+00:04:47.890 --> 00:04:54.445
+Its parameters are also
+denoted here w^[1] like so.
+
+90
+00:04:54.445 --> 00:04:57.090
+Similarly, I can add
+
+91
+00:04:57.090 --> 00:04:59.170
+superscripts square
+brackets like
+
+92
+00:04:59.170 --> 00:05:00.650
+so to denote that these are
+
+93
+00:05:00.650 --> 00:05:02.990
+the activation values of
+
+94
+00:05:02.990 --> 00:05:08.065
+the hidden units of layer
+1 of this neural network.
+
+95
+00:05:08.065 --> 00:05:10.370
+I know maybe this notation
+
+96
+00:05:10.370 --> 00:05:12.185
+is getting a little
+bit cluttered.
+
+97
+00:05:12.185 --> 00:05:15.680
+But the thing to
+remember is whenever
+
+98
+00:05:15.680 --> 00:05:19.325
+you see this superscript
+square bracket 1,
+
+99
+00:05:19.325 --> 00:05:22.280
+that just refers to a quantity
+
+100
+00:05:22.280 --> 00:05:26.140
+that is associated with layer
+1 of the neural network.
+
+101
+00:05:26.140 --> 00:05:29.780
+If you see superscript
+square bracket 2,
+
+102
+00:05:29.780 --> 00:05:33.260
+that refers to a quantity
+associated with layer
+
+103
+00:05:33.260 --> 00:05:35.280
+2 of the neural network
+
+104
+00:05:35.280 --> 00:05:37.370
+and similarly for
+other layers as well,
+
+105
+00:05:37.370 --> 00:05:38.540
+including layer 3,
+
+106
+00:05:38.540 --> 00:05:42.455
+layer 4 and so on for neural
+networks with more layers.
+
+107
+00:05:42.455 --> 00:05:47.305
+That's the computation of layer
+1 of this neural network.
+
+108
+00:05:47.305 --> 00:05:51.690
+Its output is this
+activation vector,
+
+109
+00:05:51.690 --> 00:05:56.975
+a^[1] and I'm going to
+copy this over here
+
+110
+00:05:56.975 --> 00:06:03.490
+because this output a_1
+becomes the input to layer 2.
+
+111
+00:06:03.490 --> 00:06:06.034
+Now let's zoom into
+
+112
+00:06:06.034 --> 00:06:09.650
+the computation of layer
+2 of this neural network,
+
+113
+00:06:09.650 --> 00:06:12.035
+which is also the output layer.
+
+114
+00:06:12.035 --> 00:06:17.890
+The input to layer 2 is
+the output of layer 1,
+
+115
+00:06:17.890 --> 00:06:23.340
+so a_1 is this vector 0.3, 0.7,
+
+116
+00:06:23.340 --> 00:06:26.129
+0.2 that we just computed
+
+117
+00:06:26.129 --> 00:06:30.765
+on the previous
+part of this slide.
+
+118
+00:06:30.765 --> 00:06:35.914
+Because the output layer
+has just a single neuron,
+
+119
+00:06:35.914 --> 00:06:40.070
+all it does is it
+computes a_1 that is
+
+120
+00:06:40.070 --> 00:06:44.040
+the output of this first
+and only neuron, as g,
+
+121
+00:06:44.040 --> 00:06:47.205
+the sigmoid function
+applied to w
+
+122
+00:06:47.205 --> 00:06:51.600
+_1 in a product with a^[1],
+
+123
+00:06:51.600 --> 00:06:55.425
+so this is the input
+into this layer,
+
+124
+00:06:55.425 --> 00:06:57.480
+and then plus b_1.
+
+125
+00:06:57.480 --> 00:07:02.160
+Here, this is the quantity
+z that you familiar with
+
+126
+00:07:02.160 --> 00:07:04.010
+and g as before is
+
+127
+00:07:04.010 --> 00:07:07.530
+the sigmoid function
+that you apply to this.
+
+128
+00:07:07.580 --> 00:07:12.265
+If this results in
+a number, say 0.84,
+
+129
+00:07:12.265 --> 00:07:17.595
+then that becomes the output
+layer of the neural network.
+
+130
+00:07:17.595 --> 00:07:20.034
+In this example, because
+
+131
+00:07:20.034 --> 00:07:22.720
+the output layer has
+just a single neuron,
+
+132
+00:07:22.720 --> 00:07:24.800
+this output is just a scalar,
+
+133
+00:07:24.800 --> 00:07:27.950
+is a single number rather
+than a vector of numbers.
+
+134
+00:07:27.950 --> 00:07:31.330
+Sticking with our notational
+convention from before,
+
+135
+00:07:31.330 --> 00:07:35.230
+we're going to use a superscript
+in square brackets 2,
+
+136
+00:07:35.230 --> 00:07:37.000
+to denote the quantities
+
+137
+00:07:37.000 --> 00:07:40.265
+associated with layer 2
+of this neural network,
+
+138
+00:07:40.265 --> 00:07:46.440
+so a^[2] is the
+output of this layer,
+
+139
+00:07:46.440 --> 00:07:49.290
+and so I'm going
+to also copy this
+
+140
+00:07:49.290 --> 00:07:53.430
+here as the final output
+of the neural network.
+
+141
+00:07:53.450 --> 00:07:56.435
+To make the notation consistent,
+
+142
+00:07:56.435 --> 00:08:00.500
+you can also add these
+superscripts square bracket 2s
+
+143
+00:08:00.500 --> 00:08:01.760
+to denote that these are
+
+144
+00:08:01.760 --> 00:08:05.030
+the parameters and
+activation values
+
+145
+00:08:05.030 --> 00:08:08.690
+associated with layer 2
+of the neural network.
+
+146
+00:08:08.690 --> 00:08:11.540
+Once the neural network
+has computed a_2,
+
+147
+00:08:11.540 --> 00:08:14.450
+there's one final
+optional step that you
+
+148
+00:08:14.450 --> 00:08:17.630
+can choose to implement or not,
+
+149
+00:08:17.630 --> 00:08:21.350
+which is if you want
+a binary prediction,
+
+150
+00:08:21.350 --> 00:08:23.510
+1 or 0, is this a top seller?
+
+151
+00:08:23.510 --> 00:08:26.090
+Yes or no? As you
+can take the number
+
+152
+00:08:26.090 --> 00:08:30.070
+a superscript square
+brackets 2 subscript 1,
+
+153
+00:08:30.070 --> 00:08:34.005
+and this is the number
+0.84 that we computed,
+
+154
+00:08:34.005 --> 00:08:37.890
+and threshold this at 0.5.
+
+155
+00:08:37.890 --> 00:08:39.630
+If it's greater than 0.5,
+
+156
+00:08:39.630 --> 00:08:41.010
+you can predict y hat
+
+157
+00:08:41.010 --> 00:08:43.140
+equals 1 and if it
+is less than 0.5,
+
+158
+00:08:43.140 --> 00:08:45.900
+then predict your
+y hat equals 0.
+
+159
+00:08:45.900 --> 00:08:49.100
+We saw this thresholding as
+well when you learned about
+
+160
+00:08:49.100 --> 00:08:50.330
+logistic regression in
+
+161
+00:08:50.330 --> 00:08:52.785
+the first course of
+the specialization.
+
+162
+00:08:52.785 --> 00:08:54.710
+If you wish, this then gives you
+
+163
+00:08:54.710 --> 00:08:58.085
+the final prediction y hat
+as either one or zero,
+
+164
+00:08:58.085 --> 00:09:00.200
+if you don't want
+just the probability
+
+165
+00:09:00.200 --> 00:09:01.780
+of it being a top seller.
+
+166
+00:09:01.780 --> 00:09:04.355
+So that's how a
+neural network works.
+
+167
+00:09:04.355 --> 00:09:07.250
+Every layer inputs a
+vector of numbers and
+
+168
+00:09:07.250 --> 00:09:10.265
+applies a bunch of logistic
+regression units to it,
+
+169
+00:09:10.265 --> 00:09:12.500
+and then computes
+another vector of
+
+170
+00:09:12.500 --> 00:09:14.600
+numbers that then
+gets passed from
+
+171
+00:09:14.600 --> 00:09:16.430
+layer to layer until you
+
+172
+00:09:16.430 --> 00:09:19.010
+get to the final output
+layers computation,
+
+173
+00:09:19.010 --> 00:09:21.260
+which is the prediction
+of the neural network.
+
+174
+00:09:21.260 --> 00:09:23.944
+Then you can either
+threshold at 0.5
+
+175
+00:09:23.944 --> 00:09:27.380
+or not to come up with
+the final prediction.
+
+176
+00:09:27.380 --> 00:09:30.970
+With that, let's go on to
+use this foundation we've
+
+177
+00:09:30.970 --> 00:09:34.235
+built now to look at
+some even more complex,
+
+178
+00:09:34.235 --> 00:09:37.450
+even larger neural
+network models.
+
+179
+00:09:37.450 --> 00:09:39.755
+I hope that by seeing
+more examples,
+
+180
+00:09:39.755 --> 00:09:42.200
+this concept of layers
+and how to put them
+
+181
+00:09:42.200 --> 00:09:44.645
+together to build
+a neural network
+
+182
+00:09:44.645 --> 00:09:46.490
+will become even clearer.
+
+183
+00:09:46.490 --> 00:09:49.980
+So let's go on to
+the next video.

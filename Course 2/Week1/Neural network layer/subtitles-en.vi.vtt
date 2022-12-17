@@ -1,0 +1,673 @@
+WEBVTT
+Kind: captions
+Language: vi
+
+00:00:01.700 --> 00:00:04.530
+Khối xây dựng cơ bản
+của
+
+00:00:04.530 --> 00:00:08.190
+hầu hết các mạng thần kinh hiện đại
+là một lớp tế bào thần kinh.
+
+00:00:08.190 --> 00:00:10.740
+Trong video này, bạn sẽ
+học cách xây dựng
+
+00:00:10.740 --> 00:00:13.725
+một lớp tế bào thần kinh và
+một khi bạn có nó xuống,
+
+00:00:13.725 --> 00:00:16.170
+bạn sẽ có thể lấy
+những khối xây dựng đó và đặt chúng
+
+00:00:16.170 --> 00:00:18.915
+với nhau để tạo thành một
+mạng lưới thần kinh lớn.
+
+00:00:18.915 --> 00:00:22.560
+Chúng ta hãy xem
+một lớp tế bào thần kinh hoạt động như thế nào.
+
+00:00:22.560 --> 00:00:24.450
+Đây là ví dụ chúng tôi đã có từ
+
+00:00:24.450 --> 00:00:27.090
+ví dụ dự đoán nhu cầu
+nơi chúng tôi
+
+00:00:27.090 --> 00:00:29.970
+có bốn tính năng đầu vào
+được đặt thành
+
+00:00:29.970 --> 00:00:34.110
+lớp ba tế bào thần kinh này
+trong lớp ẩn
+
+00:00:34.110 --> 00:00:36.570
+sau đó gửi đầu ra của nó tới
+
+00:00:36.570 --> 00:00:39.555
+lớp đầu ra này
+chỉ với một nơ-ron.
+
+00:00:39.555 --> 00:00:41.690
+Hãy phóng to
+
+00:00:41.690 --> 00:00:46.225
+lớp ẩn để xem xét
+các tính toán của nó.
+
+00:00:46.225 --> 00:00:49.770
+Lớp ẩn này
+nhập bốn số và
+
+00:00:49.770 --> 00:00:54.735
+bốn số này là đầu vào
+cho mỗi ba nơ-ron.
+
+00:00:54.735 --> 00:00:58.985
+Mỗi trong số ba tế bào thần kinh này
+chỉ đang thực hiện
+
+00:00:58.985 --> 00:01:01.550
+một đơn vị hồi quy logistic nhỏ
+
+00:01:01.550 --> 00:01:04.210
+hoặc một chút
+chức năng hồi quy logistic.
+
+00:01:04.210 --> 00:01:06.510
+Lấy nơ-ron đầu tiên này.
+
+00:01:06.510 --> 00:01:11.145
+Nó có hai tham số, w và b.
+
+00:01:11.145 --> 00:01:13.010
+Trong thực tế, để biểu thị điều đó,
+
+00:01:13.010 --> 00:01:15.365
+đây là đơn vị ẩn đầu tiên,
+
+00:01:15.365 --> 00:01:19.720
+Tôi sẽ đăng ký
+cái này là w_1, b_1.
+
+00:01:19.720 --> 00:01:24.110
+Những gì nó làm là tôi sẽ xuất ra
+một số giá trị kích hoạt a,
+
+00:01:24.110 --> 00:01:31.820
+là g của w_1 trong một
+tích có x cộng với b_1,
+
+00:01:31.820 --> 00:01:36.230
+đây là
+giá trị z quen thuộc mà bạn
+
+00:01:36.230 --> 00:01:37.970
+đã học về
+
+00:01:37.970 --> 00:01:40.825
+hồi quy logistic trong
+khóa học trước,
+
+00:01:40.825 --> 00:01:46.620
+và g của z là
+hàm logistic quen thuộc,
+
+00:01:46.620 --> 00:01:49.920
+1 trên 1 cộng e
+âm z.
+
+00:01:49.920 --> 00:01:54.290
+Có lẽ điều này kết thúc
+là một số 0,3 và
+
+00:01:54.290 --> 00:01:58.600
+đó là giá trị kích hoạt
+a của nơ-ron đầu tiên.
+
+00:01:58.600 --> 00:02:00.810
+Để biểu thị rằng đây
+là tế bào thần kinh đầu tiên,
+
+00:02:00.810 --> 00:02:04.080
+Tôi cũng sẽ thêm một
+chỉ số a_1 ở đây,
+
+00:02:04.080 --> 00:02:07.125
+và vì vậy a_1 có thể là
+một số như 0,3.
+
+00:02:07.125 --> 00:02:09.890
+Có 0,3 cơ hội
+
+00:02:09.890 --> 00:02:13.600
+điều này có giá cả phải chăng
+dựa trên các tính năng đầu vào.
+
+00:02:13.600 --> 00:02:15.830
+Bây giờ hãy nhìn vào
+tế bào thần kinh thứ hai.
+
+00:02:15.830 --> 00:02:22.225
+Tế bào thần kinh thứ hai có
+tham số w_2 và b_2,
+
+00:02:22.225 --> 00:02:23.850
+và những w,
+
+00:02:23.850 --> 00:02:24.900
+b hoặc w_2,
+
+00:02:24.900 --> 00:02:28.725
+b_2 là các tham số của
+đơn vị hậu cần thứ hai.
+
+00:02:28.725 --> 00:02:34.955
+Nó tính toán a_2 bằng
+hàm logistic g được áp dụng cho
+
+00:02:34.955 --> 00:02:38.629
+w_2 tích x cộng
+
+00:02:38.629 --> 00:02:43.890
+b_2 và đây có thể là một
+số khác, chẳng hạn như 0,7.
+
+00:02:43.890 --> 00:02:45.205
+Bởi vì trong ví dụ này,
+
+00:02:45.205 --> 00:02:47.470
+có 0,7 cơ hội mà chúng ta
+
+00:02:47.470 --> 00:02:51.695
+nghĩ rằng những người mua tiềm năng
+sẽ biết về chiếc áo phông này.
+
+00:02:51.695 --> 00:02:54.400
+Tương tự, nơ-ron thứ ba có
+
+00:02:54.400 --> 00:02:57.445
+bộ
+tham số thứ ba w_3, b_3.
+
+00:02:57.445 --> 00:02:58.750
+Tương tự, nó tính toán
+
+00:02:58.750 --> 00:03:01.570
+một giá trị kích hoạt
+a_3 bằng g của
+
+00:03:01.570 --> 00:03:06.305
+w_3 tích x cộng với b_3
+và có thể nói là 0,2.
+
+00:03:06.305 --> 00:03:10.410
+Trong ví dụ này,
+ba nơ-ron này xuất ra 0,3,
+
+00:03:10.410 --> 00:03:12.450
+0,7 và 0,2,
+
+00:03:12.450 --> 00:03:16.220
+và vectơ ba số này
+
+00:03:16.220 --> 00:03:21.840
+trở thành vectơ của
+các giá trị kích hoạt a,
+
+00:03:21.840 --> 00:03:24.200
+sau đó được chuyển đến
+
+00:03:24.200 --> 00:03:27.890
+lớp đầu ra cuối cùng
+của mạng thần kinh này.
+
+00:03:27.890 --> 00:03:29.720
+Bây giờ, khi bạn xây dựng
+
+00:03:29.720 --> 00:03:31.745
+mạng lưới thần kinh với
+nhiều lớp,
+
+00:03:31.745 --> 00:03:35.840
+sẽ hữu ích khi cung cấp cho
+các lớp các số khác nhau.
+
+00:03:35.840 --> 00:03:41.220
+Theo quy ước, lớp này
+được gọi là lớp 1 của
+
+00:03:41.220 --> 00:03:43.770
+mạng lưới thần kinh
+và lớp này là
+
+00:03:43.770 --> 00:03:46.815
+được gọi là lớp 2 của
+mạng nơ-ron.
+
+00:03:46.815 --> 00:03:49.220
+Lớp đầu vào
+đôi khi cũng
+
+00:03:49.220 --> 00:03:52.590
+được gọi là lớp 0 và ngày nay,
+
+00:03:52.590 --> 00:03:54.200
+có
+những mạng lưới thần kinh có thể có
+
+00:03:54.200 --> 00:03:56.885
+hàng chục hoặc thậm chí
+hàng trăm lớp.
+
+00:03:56.885 --> 00:04:00.320
+Nhưng để
+giới thiệu ký hiệu
+
+00:04:00.320 --> 00:04:03.440
+để giúp chúng tôi phân biệt
+giữa các lớp khác nhau,
+
+00:04:03.440 --> 00:04:07.220
+Tôi sẽ sử dụng
+dấu ngoặc vuông siêu ký tự
+
+00:04:07.220 --> 00:04:11.820
+1 để lập chỉ mục thành
+các lớp khác nhau.
+
+00:04:11.820 --> 00:04:14.585
+Đặc biệt, một siêu ký tự
+
+00:04:14.585 --> 00:04:17.250
+trong ngoặc vuông
+1, tôi sẽ sử dụng,
+
+00:04:17.250 --> 00:04:20.400
+đó là một ký hiệu để
+biểu thị đầu ra của
+
+00:04:20.400 --> 00:04:24.125
+lớp 1 của lớp ẩn này
+của mạng thần kinh này,
+
+00:04:24.125 --> 00:04:26.940
+và tương tự, w_1,
+
+00:04:26.940 --> 00:04:29.180
+b_1 đây là các tham số của
+
+00:04:29.180 --> 00:04:33.000
+đơn vị đầu tiên trong lớp
+1 của mạng lưới thần kinh,
+
+00:04:33.000 --> 00:04:34.190
+vì vậy tôi cũng sẽ thêm
+
+00:04:34.190 --> 00:04:36.260
+một chỉ số trên trong
+ngoặc vuông 1
+
+00:04:36.260 --> 00:04:40.110
+ở đây và w_2,
+
+00:04:40.110 --> 00:04:41.810
+b_2 là các tham số của
+
+00:04:41.810 --> 00:04:44.795
+đơn vị ẩn thứ hai
+
+00:04:44.795 --> 00:04:47.890
+hoặc nơ-ron ẩn thứ hai
+trong lớp 1.
+
+00:04:47.890 --> 00:04:54.445
+Các tham số của nó cũng
+được biểu thị ở đây w^[1] như vậy.
+
+00:04:54.445 --> 00:04:57.090
+Tương tự, tôi có thể thêm
+
+00:04:57.090 --> 00:04:59.170
+chỉ số trên ngoặc vuông
+như
+
+00:04:59.170 --> 00:05:00.650
+vì vậy để biểu thị rằng đây là
+
+00:05:00.650 --> 00:05:02.990
+các giá trị kích hoạt của
+
+00:05:02.990 --> 00:05:08.065
+các đơn vị ẩn của lớp
+1 của mạng lưới thần kinh này.
+
+00:05:08.065 --> 00:05:10.370
+Tôi biết có lẽ ký hiệu này
+
+00:05:10.370 --> 00:05:12.185
+đang trở nên hơi
+lộn xộn.
+
+00:05:12.185 --> 00:05:15.680
+Nhưng điều cần
+nhớ là bất cứ khi nào
+
+00:05:15.680 --> 00:05:19.325
+bạn thấy
+dấu ngoặc vuông siêu ký tự này 1,
+
+00:05:19.325 --> 00:05:22.280
+đó chỉ đề cập đến một số lượng
+
+00:05:22.280 --> 00:05:26.140
+được liên kết với lớp
+1 của mạng lưới thần kinh.
+
+00:05:26.140 --> 00:05:29.780
+Nếu bạn thấy
+dấu ngoặc vuông chỉ số trên 2,
+
+00:05:29.780 --> 00:05:33.260
+đề cập đến một số lượng
+liên quan đến lớp
+
+00:05:33.260 --> 00:05:35.280
+2 của mạng lưới thần kinh
+
+00:05:35.280 --> 00:05:37.370
+và tương tự cho
+các lớp khác,
+
+00:05:37.370 --> 00:05:38.540
+bao gồm lớp 3,
+
+00:05:38.540 --> 00:05:42.455
+lớp 4, v.v. đối với
+các mạng thần kinh có nhiều lớp hơn.
+
+00:05:42.455 --> 00:05:47.305
+Đó là tính toán của lớp
+1 của mạng thần kinh này.
+
+00:05:47.305 --> 00:05:51.690
+Đầu ra của nó là vector kích hoạt này ,
+
+00:05:51.690 --> 00:05:56.975
+a^[1] và tôi sẽ sao
+chép cái này ở đây
+
+00:05:56.975 --> 00:06:03.490
+bởi vì đầu ra a_1 này
+trở thành đầu vào của lớp 2.
+
+00:06:03.490 --> 00:06:06.034
+Bây giờ hãy phóng to
+
+00:06:06.034 --> 00:06:09.650
+tính toán của lớp
+2 của mạng lưới thần kinh này,
+
+00:06:09.650 --> 00:06:12.035
+đó cũng là lớp đầu ra.
+
+00:06:12.035 --> 00:06:17.890
+Đầu vào của lớp 2 là
+đầu ra của lớp 1,
+
+00:06:17.890 --> 00:06:23.340
+vậy a_1 là véc tơ 0,3, 0,7,
+
+00:06:23.340 --> 00:06:26.129
+0,2 mà chúng tôi vừa tính toán
+
+00:06:26.129 --> 00:06:30.765
+ở
+phần trước của slide này.
+
+00:06:30.765 --> 00:06:35.914
+Bởi vì lớp đầu ra
+chỉ có một nơ-ron duy nhất,
+
+00:06:35.914 --> 00:06:40.070
+tất cả những gì nó làm là nó
+tính toán a_1 tức là
+
+00:06:40.070 --> 00:06:44.040
+đầu ra của
+nơ-ron đầu tiên và duy nhất này, như g,
+
+00:06:44.040 --> 00:06:47.205
+hàm sigmoid
+được áp dụng cho w
+
+00:06:47.205 --> 00:06:51.600
+_1 trong sản phẩm có a^[1],
+
+00:06:51.600 --> 00:06:55.425
+vì vậy đây là đầu vào
+của lớp này,
+
+00:06:55.425 --> 00:06:57.480
+rồi cộng b_1.
+
+00:06:57.480 --> 00:07:02.160
+Đây, đây là số lượng
+z mà bạn quen thuộc
+
+00:07:02.160 --> 00:07:04.010
+và g như trước là
+
+00:07:04.010 --> 00:07:07.530
+hàm sigmoid
+mà bạn áp dụng cho điều này.
+
+00:07:07.580 --> 00:07:12.265
+Nếu điều này dẫn đến
+một con số, chẳng hạn như 0,84,
+
+00:07:12.265 --> 00:07:17.595
+sau đó trở thành
+lớp đầu ra của mạng lưới thần kinh.
+
+00:07:17.595 --> 00:07:20.034
+Trong ví dụ này, bởi vì
+
+00:07:20.034 --> 00:07:22.720
+lớp đầu ra
+chỉ có một nơ-ron duy nhất,
+
+00:07:22.720 --> 00:07:24.800
+đầu ra này chỉ là một vô hướng,
+
+00:07:24.800 --> 00:07:27.950
+là một số duy nhất chứ
+không phải là một vectơ số.
+
+00:07:27.950 --> 00:07:31.330
+Gắn bó với
+quy ước công chứng của chúng tôi từ trước,
+
+00:07:31.330 --> 00:07:35.230
+chúng ta sẽ sử dụng một chỉ số trên
+trong ngoặc vuông 2,
+
+00:07:35.230 --> 00:07:37.000
+để biểu thị các đại lượng
+
+00:07:37.000 --> 00:07:40.265
+được liên kết với lớp 2
+của mạng lưới thần kinh này,
+
+00:07:40.265 --> 00:07:46.440
+vì vậy a^[2] là
+đầu ra của lớp này,
+
+00:07:46.440 --> 00:07:49.290
+và vì vậy tôi
+cũng sẽ sao chép cái này
+
+00:07:49.290 --> 00:07:53.430
+đây là đầu ra cuối cùng
+của mạng lưới thần kinh.
+
+00:07:53.450 --> 00:07:56.435
+Để làm cho ký hiệu nhất quán,
+
+00:07:56.435 --> 00:08:00.500
+bạn cũng có thể thêm
+các ký tự trên dấu ngoặc vuông 2s này
+
+00:08:00.500 --> 00:08:01.760
+để biểu thị rằng đây là
+
+00:08:01.760 --> 00:08:05.030
+các thông số và
+giá trị kích hoạt
+
+00:08:05.030 --> 00:08:08.690
+liên kết với lớp 2
+của mạng nơ-ron.
+
+00:08:08.690 --> 00:08:11.540
+Khi mạng thần kinh
+đã tính a_2,
+
+00:08:11.540 --> 00:08:14.450
+có một
+bước tùy chọn cuối cùng mà bạn
+
+00:08:14.450 --> 00:08:17.630
+có thể chọn thực hiện hay không,
+
+00:08:17.630 --> 00:08:21.350
+đó là nếu bạn muốn
+một dự đoán nhị phân,
+
+00:08:21.350 --> 00:08:23.510
+1 hay 0, đây có phải là sản phẩm bán chạy nhất không?
+
+00:08:23.510 --> 00:08:26.090
+Có hay không? Như bạn
+có thể lấy số
+
+00:08:26.090 --> 00:08:30.070
+một chỉ số trên ngoặc
+vuông 2 chỉ số dưới 1,
+
+00:08:30.070 --> 00:08:34.005
+và đây là con số
+0,84 mà chúng tôi đã tính toán,
+
+00:08:34.005 --> 00:08:37.890
+và ngưỡng này ở mức 0,5.
+
+00:08:37.890 --> 00:08:39.630
+Nếu nó lớn hơn 0,5,
+
+00:08:39.630 --> 00:08:41.010
+bạn có thể dự đoán y mũ
+
+00:08:41.010 --> 00:08:43.140
+bằng 1 và nếu
+nhỏ hơn 0,5 thì
+
+00:08:43.140 --> 00:08:45.900
+sau đó dự đoán
+mũ y của bạn bằng 0.
+
+00:08:45.900 --> 00:08:49.100
+Chúng tôi cũng đã thấy ngưỡng này
+khi bạn tìm hiểu về
+
+00:08:49.100 --> 00:08:50.330
+hồi quy logistic trong
+
+00:08:50.330 --> 00:08:52.785
+khóa học đầu tiên của
+chuyên ngành.
+
+00:08:52.785 --> 00:08:54.710
+Nếu bạn muốn, điều này sau đó cung cấp cho bạn
+
+00:08:54.710 --> 00:08:58.085
+dự đoán cuối cùng y mũ
+là một hoặc không,
+
+00:08:58.085 --> 00:09:00.200
+nếu bạn không
+chỉ muốn xác suất
+
+00:09:00.200 --> 00:09:01.780
+của nó là một người bán hàng đầu.
+
+00:09:01.780 --> 00:09:04.355
+Vì vậy, đó là cách một
+mạng lưới thần kinh hoạt động.
+
+00:09:04.355 --> 00:09:07.250
+Mỗi lớp đầu vào một
+vectơ số và
+
+00:09:07.250 --> 00:09:10.265
+áp dụng một loạt
+các đơn vị hồi quy logistic cho nó,
+
+00:09:10.265 --> 00:09:12.500
+và sau đó tính toán
+một vectơ khác của
+
+00:09:12.500 --> 00:09:14.600
+số mà sau đó
+được thông qua từ
+
+00:09:14.600 --> 00:09:16.430
+lớp này sang lớp khác cho đến khi bạn
+
+00:09:16.430 --> 00:09:19.010
+đến
+phần tính toán các lớp đầu ra cuối cùng,
+
+00:09:19.010 --> 00:09:21.260
+đó là dự đoán
+của mạng lưới thần kinh.
+
+00:09:21.260 --> 00:09:23.944
+Sau đó, bạn có thể
+ngưỡng ở mức 0,5
+
+00:09:23.944 --> 00:09:27.380
+hoặc không đưa ra
+dự đoán cuối cùng.
+
+00:09:27.380 --> 00:09:30.970
+Với điều đó, hãy tiếp tục
+sử dụng nền tảng này, chúng tôi đã
+
+00:09:30.970 --> 00:09:34.235
+được xây dựng ngay bây giờ để xem xét
+một số thậm chí còn phức tạp hơn,
+
+00:09:34.235 --> 00:09:37.450
+các mô hình mạng thần kinh thậm chí còn lớn hơn
+.
+
+00:09:37.450 --> 00:09:39.755
+Tôi hy vọng rằng bằng cách xem
+nhiều ví dụ hơn,
+
+00:09:39.755 --> 00:09:42.200
+khái niệm về các lớp này
+và cách đặt chúng
+
+00:09:42.200 --> 00:09:44.645
+cùng nhau xây dựng
+một mạng lưới thần kinh
+
+00:09:44.645 --> 00:09:46.490
+sẽ trở nên rõ ràng hơn.
+
