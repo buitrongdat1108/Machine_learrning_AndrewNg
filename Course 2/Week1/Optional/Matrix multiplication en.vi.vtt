@@ -1,0 +1,637 @@
+WEBVTT
+Kind: captions
+Language: vi
+
+00:00:01.820 --> 00:00:04.380
+Bạn biết rằng một ma trận là
+
+00:00:04.380 --> 00:00:07.455
+chỉ là một khối hoặc
+mảng số 2D.
+
+00:00:07.455 --> 00:00:09.615
+nhân lên nghĩa là gì
+
+00:00:09.615 --> 00:00:12.090
+hai ma trận? Hãy xem qua.
+
+00:00:12.090 --> 00:00:15.990
+Để xây dựng
+các ma trận nhân,
+
+00:00:15.990 --> 00:00:18.330
+hãy bắt đầu bằng cách nhìn vào
+
+00:00:18.330 --> 00:00:21.615
+cách chúng ta lấy tích vô
+hướng giữa các vectơ.
+
+00:00:21.615 --> 00:00:23.940
+Hãy sử dụng ví dụ về việc lấy
+
+00:00:23.940 --> 00:00:26.370
+tích vô hướng
+giữa vectơ 1 này,
+
+00:00:26.370 --> 00:00:29.625
+2 và vectơ 3, 4 này.
+
+00:00:29.625 --> 00:00:33.210
+Nếu z là tích vô hướng
+giữa hai vectơ này,
+
+00:00:33.210 --> 00:00:35.190
+sau đó bạn tính z theo
+
+00:00:35.190 --> 00:00:38.540
+nhân phần tử đầu tiên
+với phần tử đầu tiên ở đây,
+
+00:00:38.540 --> 00:00:40.785
+nó là 1 nhân 3, cộng
+
+00:00:40.785 --> 00:00:42.690
+lần phần tử thứ hai
+
+00:00:42.690 --> 00:00:44.505
+phần tử thứ hai
+cộng 2 nhân 4,
+
+00:00:44.505 --> 00:00:47.385
+và đó chỉ là 3 cộng 8,
+
+00:00:47.385 --> 00:00:49.740
+bằng 11.
+
+00:00:49.740 --> 00:00:52.260
+Trong trường hợp tổng quát hơn,
+
+00:00:52.260 --> 00:00:58.380
+nếu z là tích vô hướng giữa
+vectơ a và vectơ w,
+
+00:00:58.380 --> 00:01:00.345
+sau đó bạn tính z theo
+
+00:01:00.345 --> 00:01:02.430
+nhân
+phần tử đầu tiên với nhau và
+
+00:01:02.430 --> 00:01:04.740
+sau đó các yếu tố thứ hai
+với nhau và thứ ba và như vậy
+
+00:01:04.740 --> 00:01:06.935
+và sau đó thêm
+tất cả các sản phẩm này.
+
+00:01:06.935 --> 00:01:10.095
+Đó là vectơ, tích
+vectơ.
+
+00:01:10.095 --> 00:01:11.760
+Hóa ra là có
+
+00:01:11.760 --> 00:01:15.510
+một cách tương đương khác để
+viết tích vô hướng,
+
+00:01:15.510 --> 00:01:18.005
+đã cho một vectơ a,
+
+00:01:18.005 --> 00:01:21.555
+nghĩa là 1, 2
+được viết dưới dạng một cột.
+
+00:01:21.555 --> 00:01:24.735
+Bạn có thể biến điều này thành một hàng.
+
+00:01:24.735 --> 00:01:26.490
+Đó là, bạn có thể
+biến nó từ những gì
+
+00:01:26.490 --> 00:01:28.770
+được gọi là một vectơ cột để
+
+00:01:28.770 --> 00:01:33.360
+một vectơ hàng bằng cách
+chuyển vị của a.
+
+00:01:33.360 --> 00:01:37.065
+Chuyển vị của
+vectơ a có nghĩa là bạn lấy
+
+00:01:37.065 --> 00:01:42.705
+vectơ này và đặt các
+phần tử của nó ở bên cạnh như thế này.
+
+00:01:42.705 --> 00:01:48.360
+Hóa ra là nếu bạn
+nhân một chuyển vị,
+
+00:01:48.360 --> 00:01:49.860
+đây là một vectơ hàng,
+
+00:01:49.860 --> 00:01:54.195
+hoặc bạn có thể coi đây là
+ma trận một nhân hai với w,
+
+00:01:54.195 --> 00:01:59.385
+mà bây giờ bạn có thể
+coi là ma trận hai nhân một.
+
+00:01:59.385 --> 00:02:05.745
+Khi đó z bằng a chuyển vị nhân
+w và điều này cũng giống như
+
+00:02:05.745 --> 00:02:12.195
+lấy tích vô hướng
+giữa a và w. Tóm lại,
+
+00:02:12.195 --> 00:02:15.825
+z bằng tích vô hướng
+giữa a và w
+
+00:02:15.825 --> 00:02:19.785
+giống như z
+bằng một chuyển vị,
+
+00:02:19.785 --> 00:02:21.960
+đó là một đặt trên một bên,
+
+00:02:21.960 --> 00:02:25.710
+nhân với w và
+
+00:02:25.710 --> 00:02:26.775
+điều này sẽ hữu ích cho
+
+00:02:26.775 --> 00:02:29.250
+hiểu phép nhân ma trận
+.
+
+00:02:29.250 --> 00:02:31.500
+Rằng đây chỉ là
+hai cách viết
+
+00:02:31.500 --> 00:02:35.385
+tính toán chính xác tương tự
+để đến z.
+
+00:02:35.385 --> 00:02:39.660
+Bây giờ hãy xem xét phép nhân ma trận véc tơ ,
+
+00:02:39.660 --> 00:02:41.700
+đó là khi bạn
+lấy một vectơ và bạn
+
+00:02:41.700 --> 00:02:44.580
+nhân một vectơ với một ma trận.
+
+00:02:44.580 --> 00:02:47.310
+Đây lại là vectơ a 1,
+
+00:02:47.310 --> 00:02:52.290
+2 và một chuyển vị được
+đặt ở một bên,
+
+00:02:52.290 --> 00:02:54.840
+vì vậy thay vì
+nghĩ về điều này như
+
+00:02:54.840 --> 00:02:59.820
+ma trận hai nhân một nó
+trở thành ma trận một nhân hai.
+
+00:02:59.820 --> 00:03:02.130
+Bây giờ hãy để tôi tạo
+
+00:03:02.130 --> 00:03:05.400
+một ma trận hai nhân hai w
+với bốn phần tử này,
+
+00:03:05.400 --> 00:03:07.350
+3, 4, 5, 6.
+
+00:03:07.350 --> 00:03:11.910
+Nếu bạn muốn tính Z là
+
+00:03:11.910 --> 00:03:19.290
+một lần chuyển vị w. Chúng ta hãy xem
+làm thế nào bạn đi về làm như vậy.
+
+00:03:19.290 --> 00:03:28.215
+Hóa ra Z sẽ là
+ma trận một nhân hai,
+
+00:03:28.215 --> 00:03:30.810
+và để tính
+giá trị đầu tiên của Z chúng ta
+
+00:03:30.810 --> 00:03:33.390
+sẽ thực hiện một chuyển vị, 1,
+
+00:03:33.390 --> 00:03:38.475
+2 ở đây, và nhân nó
+với cột đầu tiên của w,
+
+00:03:38.475 --> 00:03:41.020
+đó là 3, 4.
+
+00:03:41.360 --> 00:03:44.505
+Để tính
+phần tử đầu tiên của Z,
+
+00:03:44.505 --> 00:03:49.140
+bạn kết thúc bằng 1 nhân
+3 cộng 2 nhân 4,
+
+00:03:49.140 --> 00:03:52.020
+mà chúng ta đã thấy trước đó
+bằng 11,
+
+00:03:52.020 --> 00:03:55.935
+và do đó
+phần tử đầu tiên của Z là 11.
+
+00:03:55.935 --> 00:03:59.325
+Hãy tìm xem
+phần tử thứ hai của Z là gì.
+
+00:03:59.325 --> 00:04:02.055
+Hóa ra bạn chỉ cần
+lặp lại quá trình này,
+
+00:04:02.055 --> 00:04:04.800
+nhưng bây giờ nhân
+một chuyển đổi bởi
+
+00:04:04.800 --> 00:04:09.930
+cột thứ hai của w.
+Để thực hiện phép tính đó,
+
+00:04:09.930 --> 00:04:15.165
+bạn có 1 nhân
+5 cộng 2 nhân 6,
+
+00:04:15.165 --> 00:04:19.665
+bằng 5
+cộng 12, bằng 17.
+
+00:04:19.665 --> 00:04:22.935
+Đó là bằng 17.
+
+00:04:22.935 --> 00:04:29.130
+Z bằng với
+ma trận một nhân hai này, 11 và 17.
+
+00:04:29.130 --> 00:04:32.280
+Bây giờ, chỉ một điều cuối cùng,
+
+00:04:32.280 --> 00:04:34.770
+và sau đó chúng ta sẽ đi
+đến cuối video này,
+
+00:04:34.770 --> 00:04:36.270
+đó là cách lấy
+
+00:04:36.270 --> 00:04:38.700
+phép nhân và tổng quát hóa ma trận véc tơ
+
+00:04:38.700 --> 00:04:42.675
+nó để phép nhân ma trận ma trận
+.
+
+00:04:42.675 --> 00:04:46.110
+Tôi có một ma trận A với
+bốn phần tử này,
+
+00:04:46.110 --> 00:04:47.470
+cột đầu tiên là 1,
+
+00:04:47.470 --> 00:04:49.950
+2 và
+cột thứ hai là âm 1,
+
+00:04:49.950 --> 00:04:54.540
+âm 2 và tôi muốn
+biết cách tính toán
+
+00:04:54.540 --> 00:05:00.060
+một lần chuyển vị w.
+Không giống như slide trước,
+
+00:05:00.060 --> 00:05:03.720
+Bây giờ là một ma trận chứ không
+chỉ là vectơ hoặc
+
+00:05:03.720 --> 00:05:05.730
+ma trận chỉ là một tập hợp các
+
+00:05:05.730 --> 00:05:09.240
+các vectơ khác nhau xếp chồng lên
+nhau trong các cột.
+
+00:05:09.240 --> 00:05:12.975
+Trước tiên, hãy tìm hiểu
+chuyển vị là gì.
+
+00:05:12.975 --> 00:05:15.135
+Để tính toán chuyển vị A,
+
+00:05:15.135 --> 00:05:17.930
+chúng ta sẽ lấy
+các cột của A và
+
+00:05:17.930 --> 00:05:21.245
+tương tự như những gì đã xảy ra
+khi bạn hoán vị một véc-tơ,
+
+00:05:21.245 --> 00:05:22.670
+chúng ta sẽ lấy các cột
+
+00:05:22.670 --> 00:05:23.990
+và đặt chúng sang một bên,
+
+00:05:23.990 --> 00:05:25.750
+một cột tại một thời điểm.
+
+00:05:25.750 --> 00:05:27.210
+Cột đầu tiên 1,
+
+00:05:27.210 --> 00:05:29.910
+2 trở thành hàng đầu tiên 1,
+
+00:05:29.910 --> 00:05:31.920
+2, chúng ta hãy nằm nghiêng,
+
+00:05:31.920 --> 00:05:34.410
+và
+cột thứ hai này, âm 1,
+
+00:05:34.410 --> 00:05:38.010
+âm 2 trở nên nằm
+ở phía âm 1,
+
+00:05:38.010 --> 00:05:39.750
+âm 2 như thế này.
+
+00:05:39.750 --> 00:05:41.760
+Cách bạn hoán vị
+một ma trận là bạn thực hiện
+
+00:05:41.760 --> 00:05:44.805
+các cột và bạn chỉ cần đặt
+các cột ở bên cạnh,
+
+00:05:44.805 --> 00:05:46.140
+một cột tại một thời điểm,
+
+00:05:46.140 --> 00:05:49.650
+bạn kết thúc với điều này
+là A chuyển vị.
+
+00:05:49.650 --> 00:05:53.175
+Tiếp theo chúng ta có ma trận này W,
+
+00:05:53.175 --> 00:05:56.190
+sẽ
+viết là 3,4, 5,6.
+
+00:05:56.190 --> 00:06:00.450
+Có cột 3, 4
+và cột 5, 6.
+
+00:06:00.450 --> 00:06:03.885
+Một cách tôi khuyến khích bạn
+nghĩ về ma trận.
+
+00:06:03.885 --> 00:06:05.940
+Ít nhất là có ích cho
+
+00:06:05.940 --> 00:06:09.975
+triển khai mạng thần kinh
+là nếu bạn thấy một ma trận,
+
+00:06:09.975 --> 00:06:11.730
+nghĩ về các cột của
+
+00:06:11.730 --> 00:06:15.270
+ma trận và nếu bạn thấy
+chuyển vị của ma trận,
+
+00:06:15.270 --> 00:06:17.340
+nghĩ về các hàng của
+ma trận đó được nhóm lại
+
+00:06:17.340 --> 00:06:19.440
+cùng nhau như minh họa ở đây,
+
+00:06:19.440 --> 00:06:24.225
+với chuyển vị A và A
+cũng như W. Bây giờ,
+
+00:06:24.225 --> 00:06:28.905
+để tôi chỉ cho bạn cách
+nhân A chuyển vị và
+
+00:06:28.905 --> 00:06:31.980
+W. Để thực hiện
+
+00:06:31.980 --> 00:06:36.390
+phép tính này để tôi
+gọi các cột của A,
+
+00:06:36.390 --> 00:06:42.090
+a_1 và a_2 và điều đó
+có nghĩa là a_1 chuyển vị,
+
+00:06:42.090 --> 00:06:44.325
+đây là hàng đầu tiên
+của chuyển vị A,
+
+00:06:44.325 --> 00:06:49.890
+và chuyển vị a_2 là
+hàng thứ hai của chuyển vị A.
+
+00:06:49.890 --> 00:06:51.810
+Sau đó, giống như trước đây,
+
+00:06:51.810 --> 00:06:57.435
+để tôi gọi các cột
+của W là w_1 và w_2.
+
+00:06:57.435 --> 00:07:02.025
+Hóa ra để
+tính A chuyển vị W,
+
+00:07:02.025 --> 00:07:04.980
+điều đầu tiên chúng ta
+cần làm là hãy
+
+00:07:04.980 --> 00:07:08.355
+chỉ cần bỏ qua hàng thứ hai của
+
+00:07:08.355 --> 00:07:10.680
+A và chúng ta hãy
+chú ý đến
+
+00:07:10.680 --> 00:07:14.280
+hàng đầu tiên của A và
+hãy lấy hàng 1 này,
+
+00:07:14.280 --> 00:07:17.970
+2 đó là chuyển vị a_1
+và nhân số đó với
+
+00:07:17.970 --> 00:07:20.280
+W. Bạn đã biết
+
+00:07:20.280 --> 00:07:23.055
+làm thế nào để làm điều đó từ
+slide trước.
+
+00:07:23.055 --> 00:07:25.050
+Phần tử đầu tiên là 1,
+
+00:07:25.050 --> 00:07:28.440
+2, tích trong hay
+tích vô hướng ta có 3, 4.
+
+00:07:28.440 --> 00:07:32.985
+Kết quả là 3 nhân 1
+cộng 2 nhân 4, bằng 11.
+
+00:07:32.985 --> 00:07:36.870
+Sau đó, phần tử thứ hai là 1,
+
+00:07:36.870 --> 00:07:38.550
+2 Chuyển vị,
+
+00:07:38.550 --> 00:07:40.065
+sản phẩm bên trong chúng tôi có 5, 6.
+
+00:07:40.065 --> 00:07:43.755
+Có 5 nhân 1
+cộng 6 nhân 2,
+
+00:07:43.755 --> 00:07:46.785
+là 5 cộng 12, là 17.
+
+00:07:46.785 --> 00:07:49.965
+Điều đó mang lại cho bạn
+hàng đầu tiên của Z
+
+00:07:49.965 --> 00:07:53.370
+bằng A chuyển vị
+W. Tất cả những gì chúng ta đã làm là
+
+00:07:53.370 --> 00:07:56.700
+lấy a_1 chuyển vị và nhân lên
+
+00:07:56.700 --> 00:07:57.945
+đó bởi W. Đó là
+
+00:07:57.945 --> 00:08:00.525
+chính xác những gì chúng ta đã làm ở
+slide trước.
+
+00:08:00.525 --> 00:08:04.245
+Tiếp theo, hãy quên a_1 ngay bây giờ,
+
+00:08:04.245 --> 00:08:07.350
+và chúng ta hãy nhìn
+vào a_2 và lấy
+
+00:08:07.350 --> 00:08:12.030
+a_2 chuyển vị và nhân
+nó với W. Bây giờ chúng ta
+
+00:08:12.030 --> 00:08:16.530
+có a_2 lần chuyển vị W. Đến
+
+00:08:16.530 --> 00:08:18.660
+tính toán rằng trước tiên chúng ta
+lấy âm 1 và
+
+00:08:18.660 --> 00:08:21.690
+âm 2 và
+tích vô hướng với 3, 4.
+
+00:08:21.690 --> 00:08:25.200
+Đó là âm 1 nhân
+3 cộng âm
+
+00:08:25.200 --> 00:08:30.060
+2 nhân 4 và
+kết quả là âm 11.
+
+00:08:30.060 --> 00:08:32.880
+Sau đó, chúng ta phải tính toán
+
+00:08:32.880 --> 00:08:36.030
+a_2 hoán vị
+nhân với cột thứ hai,
+
+00:08:36.030 --> 00:08:39.555
+và có âm 1 nhân 5
+cộng âm 2 nhân 6,
+
+00:08:39.555 --> 00:08:43.380
+và điều đó hóa ra
+là âm 17.
+
+00:08:43.380 --> 00:08:46.910
+Bạn kết thúc với A
+chuyển vị lần W bằng nhau
+
+00:08:46.910 --> 00:08:50.920
+đến ma trận hai nhân hai ở đây.
+
+00:08:50.920 --> 00:08:54.185
+Hãy nói về
+hình thức chung
+
+00:08:54.185 --> 00:08:57.185
+của phép nhân ma trận matrix.
+
+00:08:57.185 --> 00:08:59.750
+Đây là một ví dụ về cách bạn
+
+00:08:59.750 --> 00:09:02.060
+nhân một vectơ với một ma trận,
+
+00:09:02.060 --> 00:09:03.440
+hoặc một ma trận với
+
+00:09:03.440 --> 00:09:06.320
+một ma trận là rất nhiều
+sản phẩm chấm giữa
+
+00:09:06.320 --> 00:09:07.940
+vectơ nhưng được sắp xếp theo thứ tự
+
+00:09:07.940 --> 00:09:11.090
+một cách nhất định để xây dựng
+các phần tử của Z trên,
+
+00:09:11.090 --> 00:09:13.120
+một yếu tố tại một thời điểm.
+
+00:09:13.120 --> 00:09:14.975
+Tôi biết điều này là rất nhiều,
+
+00:09:14.975 --> 00:09:16.460
+nhưng trong video tiếp theo,
+
+00:09:16.460 --> 00:09:18.875
+chúng ta hãy nhìn vào
+hình thức chung của như thế nào
+
+00:09:18.875 --> 00:09:21.245
+phép nhân ma trận
+là
+
+00:09:21.245 --> 00:09:25.070
+được định nghĩa và tôi hy vọng điều đó cũng sẽ
+làm cho tất cả điều này trở nên rõ ràng.
+

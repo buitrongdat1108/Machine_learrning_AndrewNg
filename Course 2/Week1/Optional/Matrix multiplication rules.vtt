@@ -1,0 +1,619 @@
+WEBVTT
+
+1
+00:00:02.259 --> 00:00:08.162
+So let's take a look at the general form
+of how you multiply two matrices together.
+
+2
+00:00:08.162 --> 00:00:12.196
+And then in the last video after this one,
+we'll take this and
+
+3
+00:00:12.196 --> 00:00:16.402
+apply it to the vectorized
+implementation of a neural network.
+
+4
+00:00:16.402 --> 00:00:17.596
+Let's dive in.
+
+5
+00:00:17.596 --> 00:00:21.793
+Here's the matrix A, which is a 2 by 3
+
+6
+00:00:21.793 --> 00:00:26.641
+matrix because it has two rows and
+three columns.
+
+7
+00:00:26.641 --> 00:00:31.905
+As before I encourage you to
+think of the columns of this
+
+8
+00:00:31.905 --> 00:00:37.061
+matrix as three vectors,
+vectors a1, a2 and a3.
+
+9
+00:00:37.061 --> 00:00:41.721
+And what we're going to do
+is take A transpose and
+
+10
+00:00:41.721 --> 00:00:44.913
+multiply that with the matrix W.
+
+11
+00:00:44.913 --> 00:00:46.393
+The first, what is A transpose?
+
+12
+00:00:46.393 --> 00:00:50.665
+Well, A transpose is obtained by
+taking the first column of A and
+
+13
+00:00:50.665 --> 00:00:55.330
+laying it on the side like this and
+then taking the second column of A and
+
+14
+00:00:55.330 --> 00:00:57.326
+laying on his side like this.
+
+15
+00:00:57.326 --> 00:01:00.589
+And then the third column of A and
+laying on the side like that.
+
+16
+00:01:00.589 --> 00:01:05.095
+And so these rows are now A1 transpose,
+
+17
+00:01:05.095 --> 00:01:08.843
+A2 transpose and A3 transpose.
+
+18
+00:01:08.843 --> 00:01:12.053
+Next, here's the matrix W.
+
+19
+00:01:12.053 --> 00:01:16.807
+I encourage you to think
+of W as factors w1,
+
+20
+00:01:16.807 --> 00:01:21.056
+w2, w3, and w4 stacked together.
+
+21
+00:01:21.056 --> 00:01:26.302
+As so let's look at how you then
+compute A transpose times W.
+
+22
+00:01:26.302 --> 00:01:31.441
+Now, notice that I've also used
+slightly different shades of orange
+
+23
+00:01:31.441 --> 00:01:36.668
+to denote the different columns of A,
+where the same shade corresponds
+
+24
+00:01:36.668 --> 00:01:41.214
+to numbers that we think of as
+grouped together into a vector.
+
+25
+00:01:41.214 --> 00:01:46.127
+And that same shade is used to indicate
+different roles of A transpose because
+
+26
+00:01:46.127 --> 00:01:51.808
+the different roles of A transpose are A1
+transpose, A2 transpose and A3 transpose.
+
+27
+00:01:51.808 --> 00:01:53.241
+And in a similar way,
+
+28
+00:01:53.241 --> 00:01:57.711
+I've used different shades to
+denote the different columns of W.
+
+29
+00:01:57.711 --> 00:02:01.602
+Because the numbers
+are the same shade of blue,
+
+30
+00:02:01.602 --> 00:02:08.425
+are the ones that are grouped together to
+form the vectors w1, w 2, or w3 or w4.
+
+31
+00:02:08.425 --> 00:02:14.945
+Now, let's look at how you can
+compute A transpose times W.
+
+32
+00:02:14.945 --> 00:02:20.491
+I'm going to draw vertical bows to
+the different shades of blue and
+
+33
+00:02:20.491 --> 00:02:25.840
+horizontal bars with the different
+shades of orange to indicate
+
+34
+00:02:25.840 --> 00:02:30.595
+which elements of Z that is
+A transpose W are influenced or
+
+35
+00:02:30.595 --> 00:02:34.756
+affected by the different
+roles of A transpose and
+
+36
+00:02:34.756 --> 00:02:40.133
+which are influenced or
+affected by the different columns of W.
+
+37
+00:02:40.133 --> 00:02:42.996
+So for example,
+let's look at the first Column of W.
+
+38
+00:02:42.996 --> 00:02:48.831
+So that's w1 as indicated by
+the lightest shade of blue here.
+
+39
+00:02:48.831 --> 00:02:54.211
+So w1 will influence or
+will correspond to this
+
+40
+00:02:54.211 --> 00:03:00.807
+first column of Z shown here
+by this lighter shade of blue.
+
+41
+00:03:00.807 --> 00:03:06.026
+And the values of this second
+column of W that is w2 as indicated
+
+42
+00:03:06.026 --> 00:03:11.642
+by this second lighter shade of blue
+will affect the values computed
+
+43
+00:03:11.642 --> 00:03:17.083
+into second column of Z and so
+on for the third and fourth columns.
+
+44
+00:03:18.130 --> 00:03:21.271
+Correspondingly, let's
+look at A transpose.
+
+45
+00:03:21.271 --> 00:03:25.952
+A1 transpose is the first row
+of A transpose as indicated by
+
+46
+00:03:25.952 --> 00:03:30.727
+the lightest shade of orange and
+A1 transpose will effect or
+
+47
+00:03:30.727 --> 00:03:35.417
+influence or correspond to
+the values in the first row of Z.
+
+48
+00:03:35.417 --> 00:03:40.282
+And A2 transpose will influence
+the second row of Z and
+
+49
+00:03:40.282 --> 00:03:46.329
+A3 transports will influence or
+correspond to this third row of Z.
+
+50
+00:03:46.329 --> 00:03:50.037
+So let's figure out how
+to compute the matrix Z,
+
+51
+00:03:50.037 --> 00:03:52.849
+which is going to be a 3 by 4 matrix.
+
+52
+00:03:52.849 --> 00:03:55.156
+So with 12 numbers altogether.
+
+53
+00:03:55.156 --> 00:04:00.554
+Let's start off and figure out how to
+compute the number in the first row,
+
+54
+00:04:00.554 --> 00:04:02.391
+in the first column of Z.
+
+55
+00:04:02.391 --> 00:04:06.592
+So this upper left most element here
+because this is the first row and first
+
+56
+00:04:06.592 --> 00:04:11.360
+column corresponding to the lighter shade
+of orange and the lighter shade of blue.
+
+57
+00:04:11.360 --> 00:04:16.334
+The way you compute that is to grab
+the first row of a transpose and
+
+58
+00:04:16.334 --> 00:04:22.064
+the first column of W and
+take their inner product or the product.
+
+59
+00:04:22.064 --> 00:04:27.443
+And so
+this number is going to be (1,2)
+
+60
+00:04:27.443 --> 00:04:34.628
+dot product with (3,4) which
+is (1 * 3) + (2 * 4) = 11.
+
+61
+00:04:34.628 --> 00:04:36.482
+Let's look at the second example.
+
+62
+00:04:36.482 --> 00:04:42.433
+How would you compute this element of Z.
+
+63
+00:04:42.433 --> 00:04:45.883
+So this is in the third row,
+row 1, row 2, row 3.
+
+64
+00:04:45.883 --> 00:04:50.292
+So this is in row 3 and
+the second column, column 1, column 2.
+
+65
+00:04:50.292 --> 00:04:55.963
+So to compute the number in row 3,
+column 2 of Z,
+
+66
+00:04:55.963 --> 00:05:00.689
+you would now grab row
+3 of A transpose and
+
+67
+00:05:00.689 --> 00:05:05.970
+column 2 of W and
+dot product those together.
+
+68
+00:05:05.970 --> 00:05:09.652
+Notice that this corresponds to
+the darkest shade of orange and
+
+69
+00:05:09.652 --> 00:05:11.743
+the second lightest shade of blue.
+
+70
+00:05:11.743 --> 00:05:18.826
+And to compute this,
+this is (0.1 * 5) +(0.2 * 6),
+
+71
+00:05:18.826 --> 00:05:25.032
+which is (0.5 + 1.2),
+which is equal to 1.7.
+
+72
+00:05:25.032 --> 00:05:29.341
+So to compute the number in row 3,
+column 2 of Z,
+
+73
+00:05:29.341 --> 00:05:34.798
+you grab the third row,
+row 3 of a transpose and column 2 of W.
+
+74
+00:05:34.798 --> 00:05:40.159
+Let's look at one more example and
+let's see if you can figure this one out.
+
+75
+00:05:40.159 --> 00:05:47.063
+This is row 2, column 3 of the matrix Z.
+
+76
+00:05:47.063 --> 00:05:51.465
+Why don't you take a look and
+see if you can figure out which row and
+
+77
+00:05:51.465 --> 00:05:54.748
+which column to grab the dot
+product together and
+
+78
+00:05:54.748 --> 00:05:59.652
+therefore what is the number that will
+go in this element of this matrix.
+
+79
+00:05:59.652 --> 00:06:01.566
+Hopefully you got that.
+
+80
+00:06:01.566 --> 00:06:07.881
+You should be grabbing row 2 of
+A transpose and column 3 of W.
+
+81
+00:06:07.881 --> 00:06:12.507
+And when you dot product
+that together you have A2
+
+82
+00:06:12.507 --> 00:06:17.132
+transpose w3 is (-1 * 7) + (-2 * 8 ),
+
+83
+00:06:17.132 --> 00:06:22.327
+which is (-7 + -16),
+which is equal to -23.
+
+84
+00:06:22.327 --> 00:06:26.510
+And so that's how you compute
+this element of the matrix Z.
+
+85
+00:06:26.510 --> 00:06:31.587
+And it turns out if you do this for every
+element of the matrix Z, then you can
+
+86
+00:06:31.587 --> 00:06:36.677
+compute all of the numbers in this matrix
+which turns out to look like that.
+
+87
+00:06:36.677 --> 00:06:41.769
+Feel free to pause the video if you want
+and picking the elements and double check
+
+88
+00:06:41.769 --> 00:06:46.560
+that the formula we've been going
+through gives you the right value for Z.
+
+89
+00:06:46.560 --> 00:06:51.829
+I just want to point out one
+last interesting requirement for
+
+90
+00:06:51.829 --> 00:06:56.995
+multiplying matrices together,
+which is that X transpose
+
+91
+00:06:56.995 --> 00:07:02.568
+here is a 3 by 2 matrix because
+it has 3 rows and 2 columns, and
+
+92
+00:07:02.568 --> 00:07:07.968
+W here is a 2 by 4 matrix because
+it has 2 rows and 4 columns.
+
+93
+00:07:07.968 --> 00:07:12.026
+One requirement in order
+to multiply two matrices
+
+94
+00:07:12.026 --> 00:07:16.380
+together is that this number
+must match that number.
+
+95
+00:07:16.380 --> 00:07:21.103
+And that's because you can only take
+dot products between vectors that
+
+96
+00:07:21.103 --> 00:07:22.527
+are the same length.
+
+97
+00:07:22.527 --> 00:07:27.620
+So you can take the dot product
+between a vector with two numbers.
+
+98
+00:07:27.620 --> 00:07:32.483
+And that's because you can take the inner
+product between the vector of length
+
+99
+00:07:32.483 --> 00:07:35.071
+2 only with another vector of length 2.
+
+100
+00:07:35.071 --> 00:07:39.772
+You can't take the inner product between
+vector of length 2 with a vector of
+
+101
+00:07:39.772 --> 00:07:41.398
+length 3, for example.
+
+102
+00:07:41.398 --> 00:07:46.499
+And that's why matrix multiplication
+is valid only if the number of
+
+103
+00:07:46.499 --> 00:07:52.136
+columns of the first matrix, that is
+A transpose here is equal to the number
+
+104
+00:07:52.136 --> 00:07:57.257
+of rolls of the second matrix,
+that is the number of rolls of W here.
+
+105
+00:07:57.257 --> 00:08:00.931
+So that when you take dot
+products during this process,
+
+106
+00:08:00.931 --> 00:08:04.693
+you're taking dot products
+of vectors of the same size.
+
+107
+00:08:04.693 --> 00:08:12.111
+And then the other observation is that
+the output Z equals a transpose, W.
+
+108
+00:08:12.111 --> 00:08:15.449
+The dimensions of Z is 3 by 4.
+
+109
+00:08:15.449 --> 00:08:20.462
+And so the output of this
+multiplication will have the same
+
+110
+00:08:20.462 --> 00:08:26.000
+number of rows as X transpose and
+the same number of columns as W.
+
+111
+00:08:26.000 --> 00:08:31.163
+And so that too is another
+property of matrix multiplication.
+
+112
+00:08:31.163 --> 00:08:34.100
+So that's matrix multiplication.
+
+113
+00:08:34.100 --> 00:08:35.790
+All these videos are optional.
+
+114
+00:08:35.790 --> 00:08:38.481
+So thank you for
+sticking with me through these.
+
+115
+00:08:38.481 --> 00:08:43.402
+And if you're interested later in this
+week, there are also some purely optional
+
+116
+00:08:43.402 --> 00:08:48.129
+quizzes to let you practice some more
+of these calculations yourself as well.
+
+117
+00:08:48.129 --> 00:08:52.485
+Some of that, let's take what we've
+learned about matrix multiplication and
+
+118
+00:08:52.485 --> 00:08:56.266
+applied back to the vectorized
+implementation of a Neural Network.
+
+119
+00:08:56.266 --> 00:09:00.262
+I have to say the first time I understood
+the vectorized implementation,
+
+120
+00:09:00.262 --> 00:09:02.529
+I thought that's actually really cool.
+
+121
+00:09:02.529 --> 00:09:04.988
+I've been implementing Neural Networks for
+
+122
+00:09:04.988 --> 00:09:08.099
+awhile myself without
+the vectorized implementation.
+
+123
+00:09:08.099 --> 00:09:11.842
+And when I finally understood
+the vectorized implementation and
+
+124
+00:09:11.842 --> 00:09:14.359
+implemented it that way for
+the first time,
+
+125
+00:09:14.359 --> 00:09:18.246
+it ran blazingly much faster than
+anything I've ever done before.
+
+126
+00:09:18.246 --> 00:09:21.573
+And I thought, wow,
+I wish I had figured this out earlier.
+
+127
+00:09:21.573 --> 00:09:25.448
+The vectorized implementation,
+it is a little bit complicated,
+
+128
+00:09:25.448 --> 00:09:28.020
+but it makes your
+networks run much faster.
+
+129
+00:09:28.020 --> 00:09:30.360
+So let's take a look at
+that in the next video

@@ -1,0 +1,817 @@
+WEBVTT
+
+1
+00:00:01.820 --> 00:00:04.380
+You know that a matrix is
+
+2
+00:00:04.380 --> 00:00:07.455
+just a block or 2D
+array of numbers.
+
+3
+00:00:07.455 --> 00:00:09.615
+What does it mean to multiply
+
+4
+00:00:09.615 --> 00:00:12.090
+two matrices? Let's take a look.
+
+5
+00:00:12.090 --> 00:00:15.990
+In order to build up to
+multiplying matrices,
+
+6
+00:00:15.990 --> 00:00:18.330
+let's start by looking at
+
+7
+00:00:18.330 --> 00:00:21.615
+how we take dot products
+between vectors.
+
+8
+00:00:21.615 --> 00:00:23.940
+Let's use the example of taking
+
+9
+00:00:23.940 --> 00:00:26.370
+the dot product
+between this vector 1,
+
+10
+00:00:26.370 --> 00:00:29.625
+2 and this vector 3, 4.
+
+11
+00:00:29.625 --> 00:00:33.210
+If z is the dot product
+between these two vectors,
+
+12
+00:00:33.210 --> 00:00:35.190
+then you compute z by
+
+13
+00:00:35.190 --> 00:00:38.540
+multiplying the first element
+by the first element here,
+
+14
+00:00:38.540 --> 00:00:40.785
+it's 1 times 3, plus
+
+15
+00:00:40.785 --> 00:00:42.690
+the second element times
+
+16
+00:00:42.690 --> 00:00:44.505
+the second element
+plus 2 times 4,
+
+17
+00:00:44.505 --> 00:00:47.385
+and so that's just 3 plus 8,
+
+18
+00:00:47.385 --> 00:00:49.740
+which is equal to 11.
+
+19
+00:00:49.740 --> 00:00:52.260
+In the more general case,
+
+20
+00:00:52.260 --> 00:00:58.380
+if z is the dot product between
+a vector a and vector w,
+
+21
+00:00:58.380 --> 00:01:00.345
+then you compute z by
+
+22
+00:01:00.345 --> 00:01:02.430
+multiplying the first
+element together and
+
+23
+00:01:02.430 --> 00:01:04.740
+then the second elements
+together and the third and so
+
+24
+00:01:04.740 --> 00:01:06.935
+on and then adding up
+all of these products.
+
+25
+00:01:06.935 --> 00:01:10.095
+That's the vector,
+vector dot product.
+
+26
+00:01:10.095 --> 00:01:11.760
+It turns out there's
+
+27
+00:01:11.760 --> 00:01:15.510
+another equivalent way of
+writing a dot product,
+
+28
+00:01:15.510 --> 00:01:18.005
+which has given a vector a,
+
+29
+00:01:18.005 --> 00:01:21.555
+that is, 1, 2
+written as a column.
+
+30
+00:01:21.555 --> 00:01:24.735
+You can turn this into a row.
+
+31
+00:01:24.735 --> 00:01:26.490
+That is, you can
+turn it from what's
+
+32
+00:01:26.490 --> 00:01:28.770
+called a column vector to
+
+33
+00:01:28.770 --> 00:01:33.360
+a row vector by taking
+the transpose of a.
+
+34
+00:01:33.360 --> 00:01:37.065
+The transpose of the
+vector a means you take
+
+35
+00:01:37.065 --> 00:01:42.705
+this vector and lay its
+elements on the side like this.
+
+36
+00:01:42.705 --> 00:01:48.360
+It turns out that if you
+multiply a transpose,
+
+37
+00:01:48.360 --> 00:01:49.860
+this is a row vector,
+
+38
+00:01:49.860 --> 00:01:54.195
+or you can think of this as
+a one-by-two matrix with w,
+
+39
+00:01:54.195 --> 00:01:59.385
+which you can now think of
+as a two-by-one matrix.
+
+40
+00:01:59.385 --> 00:02:05.745
+Then z equals a transpose times
+w and this is the same as
+
+41
+00:02:05.745 --> 00:02:12.195
+taking the dot product
+between a and w. To recap,
+
+42
+00:02:12.195 --> 00:02:15.825
+z equals the dot
+product between a and w
+
+43
+00:02:15.825 --> 00:02:19.785
+is the same as z
+equals a transpose,
+
+44
+00:02:19.785 --> 00:02:21.960
+that is a laid on the side,
+
+45
+00:02:21.960 --> 00:02:25.710
+multiplied by w and
+
+46
+00:02:25.710 --> 00:02:26.775
+this will be useful for
+
+47
+00:02:26.775 --> 00:02:29.250
+understanding matrix
+multiplication.
+
+48
+00:02:29.250 --> 00:02:31.500
+That these are just
+two ways of writing
+
+49
+00:02:31.500 --> 00:02:35.385
+the exact same computation
+to arrive at z.
+
+50
+00:02:35.385 --> 00:02:39.660
+Now let's look at vector
+matrix multiplication,
+
+51
+00:02:39.660 --> 00:02:41.700
+which is when you
+take a vector and you
+
+52
+00:02:41.700 --> 00:02:44.580
+multiply a vector by a matrix.
+
+53
+00:02:44.580 --> 00:02:47.310
+Here again is the vector a 1,
+
+54
+00:02:47.310 --> 00:02:52.290
+2 and a transpose is
+a laid on the side,
+
+55
+00:02:52.290 --> 00:02:54.840
+so rather than this
+think of this as
+
+56
+00:02:54.840 --> 00:02:59.820
+a two-by-one matrix it
+becomes a one-by-two matrix.
+
+57
+00:02:59.820 --> 00:03:02.130
+Let me now create
+
+58
+00:03:02.130 --> 00:03:05.400
+a two-by-two matrix w
+with these four elements,
+
+59
+00:03:05.400 --> 00:03:07.350
+3, 4, 5, 6.
+
+60
+00:03:07.350 --> 00:03:11.910
+If you want to compute Z as
+
+61
+00:03:11.910 --> 00:03:19.290
+a transpose times w. Let's see
+how you go about doing so.
+
+62
+00:03:19.290 --> 00:03:28.215
+It turns out that Z is going
+to be a one-by-two matrix,
+
+63
+00:03:28.215 --> 00:03:30.810
+and to compute the
+first value of Z we're
+
+64
+00:03:30.810 --> 00:03:33.390
+going to take a transpose, 1,
+
+65
+00:03:33.390 --> 00:03:38.475
+2 here, and multiply that
+by the first column of w,
+
+66
+00:03:38.475 --> 00:03:41.020
+that's 3, 4.
+
+67
+00:03:41.360 --> 00:03:44.505
+To compute the
+first element of Z,
+
+68
+00:03:44.505 --> 00:03:49.140
+you end up with 1 times
+3 plus 2 times 4,
+
+69
+00:03:49.140 --> 00:03:52.020
+which we saw earlier
+is equal to 11,
+
+70
+00:03:52.020 --> 00:03:55.935
+and so the first
+element of Z is 11.
+
+71
+00:03:55.935 --> 00:03:59.325
+Let's figure out what's
+the second element of Z.
+
+72
+00:03:59.325 --> 00:04:02.055
+It turns out you just
+repeat this process,
+
+73
+00:04:02.055 --> 00:04:04.800
+but now multiplying
+a transpose by
+
+74
+00:04:04.800 --> 00:04:09.930
+the second column of w.
+To do that computation,
+
+75
+00:04:09.930 --> 00:04:15.165
+you have 1 times
+5 plus 2 times 6,
+
+76
+00:04:15.165 --> 00:04:19.665
+which is equal to 5
+plus 12, which is 17.
+
+77
+00:04:19.665 --> 00:04:22.935
+That's equal to 17.
+
+78
+00:04:22.935 --> 00:04:29.130
+Z is equal to this one-by-two
+matrix, 11 and 17.
+
+79
+00:04:29.130 --> 00:04:32.280
+Now, just one last thing,
+
+80
+00:04:32.280 --> 00:04:34.770
+and then that'll take us
+to the end of this video,
+
+81
+00:04:34.770 --> 00:04:36.270
+which is how to take
+
+82
+00:04:36.270 --> 00:04:38.700
+vector matrix multiplication
+and generalize
+
+83
+00:04:38.700 --> 00:04:42.675
+it to matrix matrix
+multiplication.
+
+84
+00:04:42.675 --> 00:04:46.110
+I have a matrix A with
+these four elements,
+
+85
+00:04:46.110 --> 00:04:47.470
+the first column is 1,
+
+86
+00:04:47.470 --> 00:04:49.950
+2 and the second
+column is negative 1,
+
+87
+00:04:49.950 --> 00:04:54.540
+negative 2 and I want
+to know how to compute
+
+88
+00:04:54.540 --> 00:05:00.060
+a transpose times w.
+Unlike the previous slide,
+
+89
+00:05:00.060 --> 00:05:03.720
+A now is a matrix rather
+than just the vector or
+
+90
+00:05:03.720 --> 00:05:05.730
+the matrix is just a set of
+
+91
+00:05:05.730 --> 00:05:09.240
+different vectors stacked
+together in columns.
+
+92
+00:05:09.240 --> 00:05:12.975
+First let's figure out
+what is A transpose.
+
+93
+00:05:12.975 --> 00:05:15.135
+In order to compute A transpose,
+
+94
+00:05:15.135 --> 00:05:17.930
+we're going to take
+the columns of A and
+
+95
+00:05:17.930 --> 00:05:21.245
+similar to what happened
+when you transpose a vector,
+
+96
+00:05:21.245 --> 00:05:22.670
+we're going to take the columns
+
+97
+00:05:22.670 --> 00:05:23.990
+and lay them on the side,
+
+98
+00:05:23.990 --> 00:05:25.750
+one column at a time.
+
+99
+00:05:25.750 --> 00:05:27.210
+The first column 1,
+
+100
+00:05:27.210 --> 00:05:29.910
+2 becomes the first row 1,
+
+101
+00:05:29.910 --> 00:05:31.920
+2, let's just laid on side,
+
+102
+00:05:31.920 --> 00:05:34.410
+and this second
+column, negative 1,
+
+103
+00:05:34.410 --> 00:05:38.010
+negative 2 becomes laid
+on the side negative 1,
+
+104
+00:05:38.010 --> 00:05:39.750
+negative 2 like this.
+
+105
+00:05:39.750 --> 00:05:41.760
+The way you transpose
+a matrix is you take
+
+106
+00:05:41.760 --> 00:05:44.805
+the columns and you just lay
+the columns on the side,
+
+107
+00:05:44.805 --> 00:05:46.140
+one column at a time,
+
+108
+00:05:46.140 --> 00:05:49.650
+you end up with this
+being A transpose.
+
+109
+00:05:49.650 --> 00:05:53.175
+Next we have this matrix W,
+
+110
+00:05:53.175 --> 00:05:56.190
+which going to
+write as 3,4, 5,6.
+
+111
+00:05:56.190 --> 00:06:00.450
+There's a column 3, 4
+and the column 5, 6.
+
+112
+00:06:00.450 --> 00:06:03.885
+One way I encourage you
+to think of matrices.
+
+113
+00:06:03.885 --> 00:06:05.940
+At least there's useful for
+
+114
+00:06:05.940 --> 00:06:09.975
+neural network implementations
+is if you see a matrix,
+
+115
+00:06:09.975 --> 00:06:11.730
+think of the columns of
+
+116
+00:06:11.730 --> 00:06:15.270
+the matrix and if you see
+the transpose of a matrix,
+
+117
+00:06:15.270 --> 00:06:17.340
+think of the rows of that
+matrix as being grouped
+
+118
+00:06:17.340 --> 00:06:19.440
+together as illustrated here,
+
+119
+00:06:19.440 --> 00:06:24.225
+with A and A transpose
+as well as W. Now,
+
+120
+00:06:24.225 --> 00:06:28.905
+let me show you how to
+multiply A transpose and
+
+121
+00:06:28.905 --> 00:06:31.980
+W. In order to carry out
+
+122
+00:06:31.980 --> 00:06:36.390
+this computation let me
+call the columns of A,
+
+123
+00:06:36.390 --> 00:06:42.090
+a_1 and a_2 and that
+means that a_1 transpose,
+
+124
+00:06:42.090 --> 00:06:44.325
+this the first row
+of A transpose,
+
+125
+00:06:44.325 --> 00:06:49.890
+and a_2 transpose is the
+second row of A transpose.
+
+126
+00:06:49.890 --> 00:06:51.810
+Then same as before,
+
+127
+00:06:51.810 --> 00:06:57.435
+let me call the columns
+of W to be w_1 and w_2.
+
+128
+00:06:57.435 --> 00:07:02.025
+It turns out that to
+compute A transpose W,
+
+129
+00:07:02.025 --> 00:07:04.980
+the first thing we
+need to do is let's
+
+130
+00:07:04.980 --> 00:07:08.355
+just ignore the second row of
+
+131
+00:07:08.355 --> 00:07:10.680
+A and let's just
+pay attention to
+
+132
+00:07:10.680 --> 00:07:14.280
+the first row of A and
+let's take this row 1,
+
+133
+00:07:14.280 --> 00:07:17.970
+2 that is a_1 transpose
+and multiply that with
+
+134
+00:07:17.970 --> 00:07:20.280
+W. You already know
+
+135
+00:07:20.280 --> 00:07:23.055
+how to do that from
+the previous slide.
+
+136
+00:07:23.055 --> 00:07:25.050
+The first element is 1,
+
+137
+00:07:25.050 --> 00:07:28.440
+2, inner product or dot
+product we've 3, 4.
+
+138
+00:07:28.440 --> 00:07:32.985
+That ends up with 3 times 1
+plus 2 times 4, which is 11.
+
+139
+00:07:32.985 --> 00:07:36.870
+Then the second element is 1,
+
+140
+00:07:36.870 --> 00:07:38.550
+2 A transpose,
+
+141
+00:07:38.550 --> 00:07:40.065
+inner product we've 5, 6.
+
+142
+00:07:40.065 --> 00:07:43.755
+There's 5 times 1
+plus 6 times 2,
+
+143
+00:07:43.755 --> 00:07:46.785
+which is 5 plus 12, which is 17.
+
+144
+00:07:46.785 --> 00:07:49.965
+That gives you the
+first row of Z
+
+145
+00:07:49.965 --> 00:07:53.370
+equals A transpose
+W. All we've done is
+
+146
+00:07:53.370 --> 00:07:56.700
+take a_1 transpose and multiply
+
+147
+00:07:56.700 --> 00:07:57.945
+that by W. That's
+
+148
+00:07:57.945 --> 00:08:00.525
+exactly what we did on
+the previous slide.
+
+149
+00:08:00.525 --> 00:08:04.245
+Next, let's forget a_1 for now,
+
+150
+00:08:04.245 --> 00:08:07.350
+and let's just look
+at a_2 and take
+
+151
+00:08:07.350 --> 00:08:12.030
+a_2 transpose and multiply
+that by W. Now we
+
+152
+00:08:12.030 --> 00:08:16.530
+have a_2 transpose times W. To
+
+153
+00:08:16.530 --> 00:08:18.660
+compute that first we
+take negative 1 and
+
+154
+00:08:18.660 --> 00:08:21.690
+negative 2 and dot
+product that with 3, 4.
+
+155
+00:08:21.690 --> 00:08:25.200
+That's negative 1
+times 3 plus negative
+
+156
+00:08:25.200 --> 00:08:30.060
+2 times 4 and that turns
+out to be negative 11.
+
+157
+00:08:30.060 --> 00:08:32.880
+Then we have to compute
+
+158
+00:08:32.880 --> 00:08:36.030
+a_2 transpose times
+the second column,
+
+159
+00:08:36.030 --> 00:08:39.555
+and has negative 1 times 5
+plus negative 2 times 6,
+
+160
+00:08:39.555 --> 00:08:43.380
+and that turns out
+to be negative 17.
+
+161
+00:08:43.380 --> 00:08:46.910
+You end up with A
+transpose times W is equal
+
+162
+00:08:46.910 --> 00:08:50.920
+to this two-by-two
+matrix over here.
+
+163
+00:08:50.920 --> 00:08:54.185
+Let's talk about
+the general form
+
+164
+00:08:54.185 --> 00:08:57.185
+of matrix matrix multiplication.
+
+165
+00:08:57.185 --> 00:08:59.750
+This was an example of how you
+
+166
+00:08:59.750 --> 00:09:02.060
+multiply a vector with a matrix,
+
+167
+00:09:02.060 --> 00:09:03.440
+or a matrix with
+
+168
+00:09:03.440 --> 00:09:06.320
+a matrix is a lot of
+dot products between
+
+169
+00:09:06.320 --> 00:09:07.940
+vectors but ordered in
+
+170
+00:09:07.940 --> 00:09:11.090
+a certain way to construct
+the elements of the upper Z,
+
+171
+00:09:11.090 --> 00:09:13.120
+one element at a time.
+
+172
+00:09:13.120 --> 00:09:14.975
+I know this was a lot,
+
+173
+00:09:14.975 --> 00:09:16.460
+but in the next video,
+
+174
+00:09:16.460 --> 00:09:18.875
+let's look at the
+general form of how
+
+175
+00:09:18.875 --> 00:09:21.245
+a matrix matrix
+multiplication is
+
+176
+00:09:21.245 --> 00:09:25.070
+defined and I hope that will
+make all this clear as well.
+
+177
+00:09:25.070 --> 00:09:27.870
+Let's go on to the next video.

@@ -1,0 +1,489 @@
+WEBVTT
+Kind: captions
+Language: vi
+
+00:00:02.259 --> 00:00:08.162
+Vì vậy, hãy xem dạng tổng quát
+của cách bạn nhân hai ma trận với nhau.
+
+00:00:08.162 --> 00:00:12.196
+Và trong video cuối cùng sau video này,
+chúng ta sẽ lấy cái này và
+
+00:00:12.196 --> 00:00:16.402
+áp dụng nó vào việc triển khai vector hóa
+mạng nơ-ron.
+
+00:00:16.402 --> 00:00:17.596
+Hãy đi sâu vào.
+
+00:00:17.596 --> 00:00:21.793
+Đây là ma trận A, là 2 nhân 3
+
+00:00:21.793 --> 00:00:26.641
+ma trận vì nó có hai hàng và
+ba cột.
+
+00:00:26.641 --> 00:00:31.905
+Như trước đây tôi khuyến khích bạn
+nghĩ về các cột này
+
+00:00:31.905 --> 00:00:37.061
+ma trận dưới dạng ba vectơ,
+vectơ a1, a2 và a3.
+
+00:00:37.061 --> 00:00:41.721
+Và những gì chúng ta sẽ làm
+là chuyển đổi A và
+
+00:00:41.721 --> 00:00:44.913
+nhân số đó với ma trận W.
+
+00:00:44.913 --> 00:00:46.393
+Đầu tiên, A transpose là gì?
+
+00:00:46.393 --> 00:00:50.665
+Chà, Chuyển vị có được bằng cách
+lấy cột đầu tiên của A và
+
+00:00:50.665 --> 00:00:55.330
+đặt nó sang một bên như thế này và
+sau đó lấy cột thứ hai của A và
+
+00:00:55.330 --> 00:00:57.326
+nằm nghiêng như thế này.
+
+00:00:57.326 --> 00:01:00.589
+Và sau đó là cột thứ ba của A và
+nằm nghiêng như thế.
+
+00:01:00.589 --> 00:01:05.095
+Và những hàng này bây giờ là chuyển vị A1,
+
+00:01:05.095 --> 00:01:08.843
+Chuyển tông A2 và chuyển tông A3.
+
+00:01:08.843 --> 00:01:12.053
+Tiếp theo, đây là ma trận W.
+
+00:01:12.053 --> 00:01:16.807
+Tôi khuyến khích bạn nghĩ
+về W như các yếu tố w1,
+
+00:01:16.807 --> 00:01:21.056
+w2, w3 và w4 xếp chồng lên nhau.
+
+00:01:21.056 --> 00:01:26.302
+Vì vậy, hãy xem cách bạn
+tính A chuyển vị nhân W.
+
+00:01:26.302 --> 00:01:31.441
+Bây giờ, lưu ý rằng tôi cũng đã sử dụng
+các sắc thái hơi khác nhau của màu cam
+
+00:01:31.441 --> 00:01:36.668
+để biểu thị các cột khác nhau của A,
+trong đó cùng một sắc thái tương ứng
+
+00:01:36.668 --> 00:01:41.214
+đến những con số mà chúng ta nghĩ là
+được nhóm lại với nhau thành một véc-tơ.
+
+00:01:41.214 --> 00:01:46.127
+Và cùng một sắc thái đó được sử dụng để biểu
+thị các vai trò khác nhau của chuyển vị A vì
+
+00:01:46.127 --> 00:01:51.808
+các vai trò khác nhau của chuyển vị A là chuyển vị A1
+, chuyển vị A2 và chuyển vị A3.
+
+00:01:51.808 --> 00:01:53.241
+Và theo cách tương tự,
+
+00:01:53.241 --> 00:01:57.711
+Tôi đã sử dụng các sắc thái khác nhau để
+biểu thị các cột khác nhau của W.
+
+00:01:57.711 --> 00:02:01.602
+Bởi vì các con số
+có cùng một màu xanh lam,
+
+00:02:01.602 --> 00:02:08.425
+là những cái được nhóm lại với nhau để
+tạo thành các vectơ w1, w 2 hoặc w3 hoặc w4.
+
+00:02:08.425 --> 00:02:14.945
+Bây giờ, hãy xem cách bạn có thể
+tính A hoán vị nhân W.
+
+00:02:14.945 --> 00:02:20.491
+Tôi sẽ vẽ những chiếc nơ thẳng đứng với
+các sắc thái khác nhau của màu xanh lam và
+
+00:02:20.491 --> 00:02:25.840
+các thanh ngang với các sắc thái khác nhau
+của màu cam để biểu thị
+
+00:02:25.840 --> 00:02:30.595
+phần tử nào của Z là
+A chuyển vị W bị ảnh hưởng hoặc
+
+00:02:30.595 --> 00:02:34.756
+bị ảnh hưởng bởi các vai trò khác nhau
+của chuyển vị A và
+
+00:02:34.756 --> 00:02:40.133
+bị ảnh hưởng hoặc
+bị ảnh hưởng bởi các cột khác nhau của W.
+
+00:02:40.133 --> 00:02:42.996
+Vì vậy, ví dụ,
+hãy nhìn vào Cột đầu tiên của W.
+
+00:02:42.996 --> 00:02:48.831
+Vì vậy, đó là w1 như được biểu thị bằng
+màu xanh nhạt nhất ở đây.
+
+00:02:48.831 --> 00:02:54.211
+Vì vậy, w1 sẽ ảnh hưởng hoặc
+sẽ tương ứng với điều này
+
+00:02:54.211 --> 00:03:00.807
+cột đầu tiên của Z được hiển thị ở đây
+bằng màu xanh nhạt hơn này.
+
+00:03:00.807 --> 00:03:06.026
+Và các giá trị của
+cột W thứ hai này là w2 như đã chỉ ra
+
+00:03:06.026 --> 00:03:11.642
+bởi màu xanh nhạt thứ hai này
+sẽ ảnh hưởng đến các giá trị được tính toán
+
+00:03:11.642 --> 00:03:17.083
+vào cột thứ hai của Z, v.v.
+cho cột thứ ba và thứ tư.
+
+00:03:18.130 --> 00:03:21.271
+Tương ứng, chúng ta hãy
+xem A chuyển vị.
+
+00:03:21.271 --> 00:03:25.952
+Chuyển vị A1 là hàng đầu tiên
+của chuyển vị A như được biểu thị bởi
+
+00:03:25.952 --> 00:03:30.727
+màu cam nhạt nhất và
+chuyển vị A1 sẽ ảnh hưởng hoặc
+
+00:03:30.727 --> 00:03:35.417
+ảnh hưởng hoặc tương ứng với
+các giá trị trong hàng đầu tiên của Z.
+
+00:03:35.417 --> 00:03:40.282
+Và chuyển vị A2 sẽ ảnh hưởng đến
+hàng thứ hai của Z và
+
+00:03:40.282 --> 00:03:46.329
+Vận A3 sẽ ảnh hưởng hoặc
+tương ứng với hàng Z thứ ba này.
+
+00:03:46.329 --> 00:03:50.037
+Vì vậy, hãy tìm hiểu cách
+tính ma trận Z,
+
+00:03:50.037 --> 00:03:52.849
+đó sẽ là một ma trận 3 nhân 4.
+
+00:03:52.849 --> 00:03:55.156
+Vì vậy, với 12 số hoàn toàn.
+
+00:03:55.156 --> 00:04:00.554
+Hãy bắt đầu và tìm ra cách
+tính số ở hàng đầu tiên,
+
+00:04:00.554 --> 00:04:02.391
+trong cột đầu tiên của Z.
+
+00:04:02.391 --> 00:04:06.592
+Vì vậy, phần tử trên cùng bên trái này ở đây
+vì đây là hàng đầu tiên và đầu tiên
+
+00:04:06.592 --> 00:04:11.360
+cột tương ứng với
+màu cam nhạt hơn và màu xanh nhạt hơn.
+
+00:04:11.360 --> 00:04:16.334
+Cách bạn tính toán đó là lấy
+hàng đầu tiên của một chuyển vị và
+
+00:04:16.334 --> 00:04:22.064
+cột đầu tiên của W và
+lấy sản phẩm bên trong của họ hoặc sản phẩm.
+
+00:04:22.064 --> 00:04:27.443
+Và vì vậy
+con số này sẽ là (1,2)
+
+00:04:27.443 --> 00:04:34.628
+tích vô hướng với (3,4)
+là (1*3) + (2*4) = 11.
+
+00:04:34.628 --> 00:04:36.482
+Hãy xem ví dụ thứ hai.
+
+00:04:36.482 --> 00:04:42.433
+Bạn sẽ tính toán phần tử này của Z như thế nào.
+
+00:04:42.433 --> 00:04:45.883
+Đây là hàng thứ ba,
+hàng 1, hàng 2, hàng 3.
+
+00:04:45.883 --> 00:04:50.292
+Đây là hàng thứ 3 và
+cột thứ hai, cột 1, cột 2.
+
+00:04:50.292 --> 00:04:55.963
+Vì vậy, để tính số ở hàng 3,
+cột 2 của Z,
+
+00:04:55.963 --> 00:05:00.689
+bây giờ bạn sẽ lấy hàng
+3 của chuyển vị A và
+
+00:05:00.689 --> 00:05:05.970
+cột 2 của W và
+tích chúng lại với nhau.
+
+00:05:05.970 --> 00:05:09.652
+Lưu ý rằng điều này tương ứng với
+bóng tối nhất của màu da cam và
+
+00:05:09.652 --> 00:05:11.743
+màu xanh nhạt thứ hai.
+
+00:05:11.743 --> 00:05:18.826
+Và để tính cái này,
+đây là (0,1 * 5) + (0,2 * 6),
+
+00:05:18.826 --> 00:05:25.032
+đó là (0,5 + 1,2),
+bằng 1,7.
+
+00:05:25.032 --> 00:05:29.341
+Vì vậy, để tính số ở hàng 3,
+cột 2 của Z,
+
+00:05:29.341 --> 00:05:34.798
+bạn lấy hàng thứ ba,
+hàng 3 của chuyển vị và cột 2 của W.
+
+00:05:34.798 --> 00:05:40.159
+Hãy xem xét một ví dụ khác và
+xem liệu bạn có thể tìm ra ví dụ này không.
+
+00:05:40.159 --> 00:05:47.063
+Đây là hàng 2, cột 3 của ma trận Z.
+
+00:05:47.063 --> 00:05:51.465
+Tại sao bạn không xem và
+xem liệu bạn có thể tìm ra hàng nào và
+
+00:05:51.465 --> 00:05:54.748
+cột nào để lấy sản phẩm chấm
+lại với nhau và
+
+00:05:54.748 --> 00:05:59.652
+do đó, số nào sẽ
+đi vào phần tử này của ma trận này.
+
+00:05:59.652 --> 00:06:01.566
+Hy vọng rằng bạn đã nhận được điều đó.
+
+00:06:01.566 --> 00:06:07.881
+Bạn nên lấy hàng 2 của
+chuyển vị A và cột 3 của W.
+
+00:06:07.881 --> 00:06:12.507
+Và khi bạn chấm sản phẩm
+đó với nhau bạn có A2
+
+00:06:12.507 --> 00:06:17.132
+hoán vị w3 là (-1 * 7) + (-2 * 8 ),
+
+00:06:17.132 --> 00:06:22.327
+là (-7 + -16),
+bằng -23.
+
+00:06:22.327 --> 00:06:26.510
+Và đó là cách bạn tính
+phần tử này của ma trận Z.
+
+00:06:26.510 --> 00:06:31.587
+Và hóa ra nếu bạn làm điều này cho mọi
+phần tử của ma trận Z, thì bạn có thể
+
+00:06:31.587 --> 00:06:36.677
+tính toán tất cả các số trong ma trận
+này để có dạng như vậy.
+
+00:06:36.677 --> 00:06:41.769
+Vui lòng tạm dừng video nếu bạn muốn
+và chọn các thành phần và kiểm tra kỹ
+
+00:06:41.769 --> 00:06:46.560
+rằng công thức chúng ta vừa trải
+qua mang lại cho bạn giá trị đúng của Z.
+
+00:06:46.560 --> 00:06:51.829
+Tôi chỉ muốn chỉ ra một
+yêu cầu thú vị cuối cùng cho
+
+00:06:51.829 --> 00:06:56.995
+nhân các ma trận với nhau,
+đó là chuyển vị X
+
+00:06:56.995 --> 00:07:02.568
+đây là ma trận 3 nhân 2 vì
+nó có 3 hàng và 2 cột, và
+
+00:07:02.568 --> 00:07:07.968
+W ở đây là ma trận 2 nhân 4 vì
+nó có 2 hàng và 4 cột.
+
+00:07:07.968 --> 00:07:12.026
+Một yêu cầu
+để nhân hai ma trận
+
+00:07:12.026 --> 00:07:16.380
+với nhau là số này
+phải khớp với số kia.
+
+00:07:16.380 --> 00:07:21.103
+Và đó là bởi vì bạn chỉ có thể lấy các tích
+vô hướng giữa các vectơ
+
+00:07:21.103 --> 00:07:22.527
+có cùng độ dài.
+
+00:07:22.527 --> 00:07:27.620
+Vì vậy, bạn có thể lấy tích vô hướng
+giữa một vectơ có hai số.
+
+00:07:27.620 --> 00:07:32.483
+Và đó là bởi vì bạn có thể lấy tích bên trong
+giữa vectơ độ dài
+
+00:07:32.483 --> 00:07:35.071
+2 chỉ với một vectơ khác có độ dài 2.
+
+00:07:35.071 --> 00:07:39.772
+Bạn không thể lấy tích bên trong giữa
+vectơ có độ dài 2 với vectơ có độ dài
+
+00:07:39.772 --> 00:07:41.398
+độ dài 3 chẳng hạn.
+
+00:07:41.398 --> 00:07:46.499
+Và đó là lý do tại sao phép nhân ma trận
+chỉ hợp lệ nếu số lượng
+
+00:07:46.499 --> 00:07:52.136
+các cột của ma trận đầu tiên, đó là
+Chuyển vị ở đây bằng số
+
+00:07:52.136 --> 00:07:57.257
+số cuộn của ma trận thứ hai,
+đó là số cuộn của W ở đây.
+
+00:07:57.257 --> 00:08:00.931
+Vì vậy, khi bạn lấy các tích vô hướng
+trong quá trình này,
+
+00:08:00.931 --> 00:08:04.693
+bạn đang lấy các
+tích vô hướng của các vectơ có cùng kích thước.
+
+00:08:04.693 --> 00:08:12.111
+Và sau đó, một quan sát khác là
+đầu ra Z bằng một chuyển vị, W.
+
+00:08:12.111 --> 00:08:15.449
+Kích thước của Z là 3 nhân 4.
+
+00:08:15.449 --> 00:08:20.462
+Và do đó, đầu ra của
+phép nhân này sẽ có cùng
+
+00:08:20.462 --> 00:08:26.000
+số hàng như chuyển vị X và
+cùng số cột như W.
+
+00:08:26.000 --> 00:08:31.163
+Và đó cũng là một
+tính chất khác của phép nhân ma trận.
+
+00:08:31.163 --> 00:08:34.100
+Đó là phép nhân ma trận.
+
+00:08:34.100 --> 00:08:35.790
+Tất cả những video này là tùy chọn.
+
+00:08:35.790 --> 00:08:38.481
+Vì vậy, cảm ơn bạn đã
+gắn bó với tôi thông qua những điều này.
+
+00:08:38.481 --> 00:08:43.402
+Và nếu bạn quan tâm vào
+cuối tuần này, thì cũng có một số tùy chọn hoàn toàn
+
+00:08:43.402 --> 00:08:48.129
+câu đố để bạn cũng có thể thực hành thêm một số
+phép tính này.
+
+00:08:48.129 --> 00:08:52.485
+Một số trong số đó, hãy lấy những gì chúng ta đã
+học về phép nhân ma trận và
+
+00:08:52.485 --> 00:08:56.266
+áp dụng trở lại việc triển khai vector hóa
+Mạng nơ-ron.
+
+00:08:56.266 --> 00:09:00.262
+Tôi phải nói rằng lần đầu tiên tôi hiểu
+việc triển khai vector hóa,
+
+00:09:00.262 --> 00:09:02.529
+Tôi nghĩ điều đó thực sự rất tuyệt.
+
+00:09:02.529 --> 00:09:04.988
+Tôi đã triển khai Mạng nơ-ron cho
+
+00:09:04.988 --> 00:09:08.099
+một lúc bản thân mình mà không cần
+thực hiện véc tơ.
+
+00:09:08.099 --> 00:09:11.842
+Và khi tôi cuối cùng đã hiểu
+việc triển khai vector hóa và
+
+00:09:11.842 --> 00:09:14.359
+thực hiện nó theo cách đó
+lần đầu tiên,
+
+00:09:14.359 --> 00:09:18.246
+nó chạy nhanh hơn nhiều so với
+bất cứ thứ gì tôi từng làm trước đây.
+
+00:09:18.246 --> 00:09:21.573
+Và tôi nghĩ, ồ,
+tôi ước mình đã phát hiện ra điều này sớm hơn.
+
+00:09:21.573 --> 00:09:25.448
+Việc triển khai vector hóa,
+hơi phức tạp một chút,
+
+00:09:25.448 --> 00:09:28.020
+nhưng nó làm cho
+mạng của bạn chạy nhanh hơn nhiều.
+

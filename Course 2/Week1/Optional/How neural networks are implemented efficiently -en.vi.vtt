@@ -1,0 +1,319 @@
+WEBVTT
+Kind: captions
+Language: vi
+
+00:00:00.680 --> 00:00:04.200
+Một trong những lý do mà
+các nhà nghiên cứu học sâu
+
+00:00:04.200 --> 00:00:07.080
+đã có thể mở rộng
+mạng lưới thần kinh,
+
+00:00:07.080 --> 00:00:09.195
+và nghĩ rằng
+mạng lưới thần kinh thực sự lớn
+
+00:00:09.195 --> 00:00:10.545
+trong thập kỷ qua,
+
+00:00:10.545 --> 00:00:13.680
+là bởi vì mạng lưới thần kinh
+có thể được vector hóa.
+
+00:00:13.680 --> 00:00:15.690
+Chúng có thể được thực hiện rất
+
+00:00:15.690 --> 00:00:18.810
+sử dụng hiệu quả
+phép nhân ma trận.
+
+00:00:18.810 --> 00:00:20.415
+Nó chỉ ra rằng
+
+00:00:20.415 --> 00:00:23.730
+phần cứng tính toán song song
+, bao gồm cả GPU,
+
+00:00:23.730 --> 00:00:26.400
+nhưng cũng có một số chức năng của CPU
+rất
+
+00:00:26.400 --> 00:00:29.910
+giỏi thực hiện các
+phép nhân ma trận rất lớn.
+
+00:00:29.910 --> 00:00:32.340
+Trong video này, chúng ta sẽ
+xem cách
+
+00:00:32.340 --> 00:00:36.300
+những triển khai véc tơ này
+của mạng lưới thần kinh hoạt động.
+
+00:00:36.300 --> 00:00:38.990
+Nếu không có những ý tưởng này, tôi
+không nghĩ học sâu
+
+00:00:38.990 --> 00:00:42.040
+sẽ gần đạt được
+thành công và quy mô ngày nay.
+
+00:00:42.040 --> 00:00:45.500
+Đây bên trái là
+mã mà bạn đã nhìn thấy
+
+00:00:45.500 --> 00:00:50.300
+trước đây về cách bạn sẽ
+thực hiện chuyển tiếp prop,
+
+00:00:50.300 --> 00:00:51.830
+hoặc lan truyền về phía trước,
+
+00:00:51.830 --> 00:00:54.030
+trong một lớp duy nhất.
+
+00:00:54.110 --> 00:00:57.585
+X ở đây là đầu vào,
+
+00:00:57.585 --> 00:01:01.140
+W, trọng số của
+thứ nhất, thứ hai,
+
+00:01:01.140 --> 00:01:03.630
+và tế bào thần kinh thứ ba, nói,
+
+00:01:03.630 --> 00:01:05.570
+tham số B, và sau đó điều này
+
+00:01:05.570 --> 00:01:08.150
+là mã giống như
+chúng ta đã thấy trước đây.
+
+00:01:08.150 --> 00:01:10.790
+Điều này sẽ xuất ra ba số,
+
+00:01:10.790 --> 00:01:11.930
+nói, như vậy.
+
+00:01:11.930 --> 00:01:14.690
+Nếu bạn thực sự thực hiện
+tính toán này,
+
+00:01:14.690 --> 00:01:17.045
+bạn nhận được 1, 0, 1.
+
+00:01:17.045 --> 00:01:19.805
+Hóa ra bạn có thể phát triển
+
+00:01:19.805 --> 00:01:25.540
+một triển khai véc tơ
+của chức năng này như sau.
+
+00:01:25.540 --> 00:01:29.310
+Đặt X bằng giá trị này.
+
+00:01:29.310 --> 00:01:31.560
+Chú ý
+dấu ngoặc vuông kép.
+
+00:01:31.560 --> 00:01:35.764
+Đây hiện là một mảng 2D,
+giống như trong TensorFlow.
+
+00:01:35.764 --> 00:01:38.250
+W giống như trước đây,
+
+00:01:38.250 --> 00:01:41.370
+và B, tôi hiện đang sử dụng B,
+
+00:01:41.370 --> 00:01:47.970
+cũng là một mảng 2D 1x3.
+
+00:01:47.970 --> 00:01:51.405
+Sau đó, hóa ra là
+tất cả các bước này,
+
+00:01:51.405 --> 00:01:53.190
+vòng lặp for này bên trong,
+
+00:01:53.190 --> 00:01:56.280
+có thể được thay thế chỉ bằng
+một vài dòng
+
+00:01:56.280 --> 00:02:00.355
+mã, Z bằng np.matmul.
+
+00:02:00.355 --> 00:02:04.710
+Matmul là cách NumPy thực
+hiện phép nhân ma trận.
+
+00:02:04.710 --> 00:02:08.565
+Bây giờ X và W
+đều là ma trận,
+
+00:02:08.565 --> 00:02:11.560
+và vì vậy bạn chỉ cần
+nhân chúng với nhau.
+
+00:02:11.560 --> 00:02:14.805
+Hóa ra vòng lặp for này,
+
+00:02:14.805 --> 00:02:16.230
+tất cả các dòng
+mã này có thể được
+
+00:02:16.230 --> 00:02:18.435
+được thay thế chỉ bằng một
+vài dòng mã,
+
+00:02:18.435 --> 00:02:23.440
+cung cấp một triển khai véc tơ
+của chức năng này.
+
+00:02:23.560 --> 00:02:25.710
+Bạn tính Z,
+
+00:02:25.710 --> 00:02:27.185
+mà bây giờ lại là một ma trận,
+
+00:02:27.185 --> 00:02:32.700
+dưới dạng numpy.matmul
+giữa A và W,
+
+00:02:32.700 --> 00:02:36.485
+ở đây A trong và
+W đều là ma trận,
+
+00:02:36.485 --> 00:02:38.719
+và matmul là cách NumPy
+
+00:02:38.719 --> 00:02:41.660
+thực hiện phép nhân ma trận
+.
+
+00:02:41.660 --> 00:02:43.600
+Nó nhân hai
+ma trận với nhau,
+
+00:02:43.600 --> 00:02:46.120
+và sau đó thêm
+ma trận B vào nó.
+
+00:02:46.120 --> 00:02:52.030
+Khi đó A out bằng với
+hàm kích hoạt g,
+
+00:02:52.030 --> 00:02:53.530
+đó là hàm sigmoid,
+
+00:02:53.530 --> 00:02:57.415
+áp dụng yếu tố khôn ngoan
+cho ma trận Z này,
+
+00:02:57.415 --> 00:03:00.600
+và sau đó bạn cuối cùng
+trả lại A ra ngoài.
+
+00:03:00.600 --> 00:03:03.995
+Đây là những gì
+mã trông giống như.
+
+00:03:03.995 --> 00:03:07.225
+Lưu ý rằng trong quá trình
+thực hiện véc tơ,
+
+00:03:07.225 --> 00:03:09.340
+tất cả các đại lượng này, x,
+
+00:03:09.340 --> 00:03:12.895
+được đưa vào giá trị
+của A trong cũng như W, B,
+
+00:03:12.895 --> 00:03:15.145
+cũng như Z và A ra,
+
+00:03:15.145 --> 00:03:17.620
+tất cả những thứ này hiện là mảng 2D.
+
+00:03:17.620 --> 00:03:19.900
+Tất cả đều là ma trận.
+
+00:03:19.900 --> 00:03:22.870
+Điều này hóa ra là
+
+00:03:22.870 --> 00:03:25.420
+triển khai rất hiệu quả
+
+00:03:25.420 --> 00:03:27.265
+một bước lan truyền về phía trước
+
+00:03:27.265 --> 00:03:29.445
+thông qua một lớp dày đặc
+trong mạng lưới thần kinh.
+
+00:03:29.445 --> 00:03:31.300
+Đây là mã cho
+
+00:03:31.300 --> 00:03:33.385
+một thực hiện véc tơ của
+
+00:03:33.385 --> 00:03:35.725
+chuyển tiếp prop trong một
+mạng lưới thần kinh.
+
+00:03:35.725 --> 00:03:37.420
+Nhưng mã này là gì
+
+00:03:37.420 --> 00:03:39.625
+đang làm gì và
+nó thực sự hoạt động như thế nào?
+
+00:03:39.625 --> 00:03:42.960
+Matmul này
+thực sự đang làm gì?
+
+00:03:42.960 --> 00:03:45.140
+Trong hai video tiếp theo,
+
+00:03:45.140 --> 00:03:46.685
+cả hai cũng tùy chọn,
+
+00:03:46.685 --> 00:03:50.800
+chúng ta sẽ xem qua phép nhân ma trận
+và cách thức hoạt động của nó.
+
+00:03:50.800 --> 00:03:53.440
+Nếu bạn quen thuộc
+với đại số tuyến tính,
+
+00:03:53.440 --> 00:03:57.325
+nếu bạn đã quen thuộc với
+vectơ, ma trận, phép đổi vị trí,
+
+00:03:57.325 --> 00:03:59.500
+và phép nhân ma trận,
+
+00:03:59.500 --> 00:04:02.440
+bạn có thể
+lướt qua một cách an toàn
+
+00:04:02.440 --> 00:04:06.210
+hai video này và chuyển đến
+video cuối cùng của tuần này.
+
+00:04:06.210 --> 00:04:09.550
+Sau đó, trong video cuối cùng của
+tuần này, cũng là tùy chọn,
+
+00:04:09.550 --> 00:04:12.040
+chúng ta sẽ đi sâu vào
+chi tiết hơn để giải thích làm thế nào
+
+00:04:12.040 --> 00:04:15.955
+matmul cung cấp cho bạn cách
+triển khai vector hóa này.
+
+00:04:15.955 --> 00:04:18.205
+Hãy chuyển sang video tiếp theo,
+
